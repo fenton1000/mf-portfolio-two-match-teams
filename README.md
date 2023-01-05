@@ -12,18 +12,27 @@ Player points awarded are based purely on the score difference in a given match 
 3. As a visiting user I want to be able to add match results and have the application use this information to try to create more evenly balanced teams when I next hit the create teams button.
 4. As a visiting user I also need to be able to remove a player from the list if they leave early while the remainder of the group play on.
 
-3. Features
-4. future features
-5. Typography and color scheme
-6. wireframes
+## 3. Features
+## 4. future features
+## 5. Typography and color scheme
+## 6. wireframes
+
+### 6.1 Initial Screen on Mobile Platform
+![wireframe of initial screen on mobile](documents/PP2%20Wireframe%201.png "Initial Mobile Screen")
+### 6.2 Screen on Mobile after Player List Entry
+![wireframe of screen on mobile after player list entry](documents/PP2%20Wireframe%202.png "mobile screen with player list")
+### 6.3 Screen on Mobile after Team Creation
+![wireframe of screen on mobile after team creation](documents/PP2%20Wireframe%203.png "mobile screen with teams lists")
+### 6.4 Screen on Desktop Platform
+![wireframe of screen on desktop](documents/PP2%20Wireframe%204.png "desktop screen")
 === 1-6 for planning and then write code ===
-7. technology
-8. testing
+## 7. technology
+## 8. testing
    8.1 code validation
    8.2 test cases (user story based with screenshots)
    8.3 fixed bugs
    8.4 supported screens and browsers
-9. Deployment
+## 9. Deployment
    9.1 via gitpod
    9.2 via github pages
-10. credits
+## 10. credits
