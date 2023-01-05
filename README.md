@@ -14,6 +14,16 @@ Player points awarded are based purely on the score difference in a given match 
 
 ## 3. Features
 ## 4. future features
+
+There are a number of features that could be added in time. These generally relate to the method of ranking players through awarding points with a view to refining the process based on additional input and analysis.
+
+1. In addition to providing match results the user could also be provided with the additional optional ability to identify the scorers in a game and how much they scored. Player points could be awarded accordingly. This could allow scoring players on a losing team to gain points.
+
+2. The system could award additional points to players on a winning team if they hold the oposition scoreless. This would award defensive effort.
+
+3. The system could also track the number of wins, draws and loses for each player and add or subtract points accordingly.
+
+In deciding to provide the product initially without any of these features the key consideration is the user the application is aimed at. The product is aimed at the recreational player and the users use of such an application would be for fun. They do not want or expect a detailed analysis.
 ## 5. Typography and color scheme
 ## 6. wireframes
 
