@@ -6,6 +6,12 @@ Match Teams is designed for groups playing non-competitive team sports for fun. 
 Player points awarded are based purely on the score difference in a given match with all players on the winning side awarded the same points. This was considered the best approach in pursuit of a Minimum Viable Product and further refinement could be considered in the future. This is discussed in more detail below.
 
 ## 2. user stories
+
+1. As a visiting user I want to be able to add players to a player list.
+2. As a visiting user I want the application to create two teams using all players on the list. As we are playing for fun all players will play each match even if the numbers are uneven. No player is asked to sit out a match.
+3. As a visiting user I want to be able to add match results and have the application use this information to try to create more evenly balanced teams when I next hit the create teams button.
+4. As a visiting user I also need to be able to remove a player from the list if they leave early while the remainder of the group play on.
+
 3. Features
 4. future features
 5. Typography and color scheme
