@@ -13,6 +13,52 @@ Player points awarded are based purely on the score difference in a given match 
 4. As a visiting user I also need to be able to remove a player from the list if they leave early while the remainder of the group play on.
 
 ## 3. Features
+
+Please note that the features section contains relevant extracts from the project wireframes. The complete wireframes are included in section 6 of this document.
+
+### 3.1 Header
+
+* The header contains the application name "Match Teams" and a sub-heading, "Picks Teams so You Don't have to!" to provide a strong initial indication as to what the application does.
+
+* The title and sub-heading are off-set in the wider desktop version to so as to better fill the space and appear more centred over the middle column content.
+
+#### Fig. 3.1.1 Mobile Header
+![wireframe of header on mobile](documents/pp2-wireframe-mobile-header.png "Mobile Header")
+#### Fig3.1.2 Destop Header
+![wireframe of header on desktop](documents/pp2-wireframe-desktop-header.png "Desktop Header")
+
+### 3.2 Add Players
+
+* Contains an input field for name entry and a submit "Add Player!" button to allow player names to be added to the list of players.
+
+* Prevents the same name being submitted twice or blank name entries being submitted.
+
+* In both the mobile and desktop applications this feature has a promiment position at the top of the screen. In the desktop version this is in the central column.
+
+#### Fig. 3.2.1 Mobile Add Players
+![wireframe of add player section on mobile](documents/pp2-wireframe-mobile-player-names.png "Mobile Add Players")
+
+#### Fig. 3.2.2 Desktop Add Players
+![wireframe of add player section on desktop](documents/pp2-wireframe-desktop-player-names.png "Desktop Add Players")
+
+### 3.3 Player List and Player Delete
+
+* As players are added via the Add Player function the player names appear listed on screen in the player list section.
+
+* Player List is located towards the bottom of screen on mobile devices. Dependant on device size and number of players it may/will move down off screen and require scrolling to be reached after team creation - see below. However it was considered that once Team A and Team B are selected, this becomes the key priority information in limited screen space. Furthermore having seen the list being created during the name entry process, the user should naturally generate an awarness of its existence and know to scroll if necessary.
+
+* On mobile devices the "Delete Player!" button is located just below the player list. This allows the removal of a player from the list at any point.
+
+* On desktop, given the ample space available, the player list is located in the left-hand column.
+
+* On desktop the "Delete Player!" button is located in the cental column at the bottom. Therefore it is removed somewhat from the player list but this was considered a more intuitive location given that all controls are located in the central column on desktop.
+
+#### Fig. 3.3.1 Mobile Player List and Player Delete
+![wireframe of player list and player delete section on mobile](documents/pp2-wireframe-mobile-playerlist-and-delete.png "Mobile Player List and Player Delete")
+
+#### Fig. 3.3.2 Desktop Player List
+![wireframe of player list section on desktop](documents/pp2-wireframe-desktop-playerlist.png "Desktop Player List")
+
 ## 4. future features
 
 There are a number of features that could be added in time. These generally relate to the method of ranking players through awarding points with a view to refining the process based on additional input and analysis.
