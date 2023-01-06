@@ -59,6 +59,46 @@ Please note that the features section contains relevant extracts from the projec
 #### Fig. 3.3.2 Desktop Player List
 ![wireframe of player list section on desktop](documents/pp2-wireframe-desktop-playerlist.png "Desktop Player List")
 
+### 3.4 Create Teams
+
+* The create teams section has a button "Create Teams!". When clicked the application divides the full player list into 2 teams, A & B.
+
+* In the mobile version of the application the two team lists are displayed to screen directly above the "Create Teams!" button.
+
+* In the destop version the two teams are displayed at the top of the right-hand side of the screen.
+
+#### Fig. 3.4.1 Mobile Create Teams
+![wireframe of create teams section on mobile](documents/pp2-wireframe-mobile-create-teams.png "Mobile Create Teams")
+
+### 3.5 Enter Match Result
+
+* Contains two input fields to take the score from each of the two teams, A & B.
+
+* Has a submit button labelled "Add Match Result!"
+
+* This area is almost identical in the mobile and desktop versions.
+
+#### Fig. 3.5.1 Mobile Enter Match Result
+![wireframe of enter match result section on mobile](documents/pp2-wireframe-mobile-result.png "Mobile Enter Match Result")
+
+### 3.6 How it Works
+
+* Provides bullet point list describing how to use the application.
+
+* Is located in the bottom right corner on desktop.
+
+* Is located at the bottom on the mobile application and can be scrolled to or reached via the footer link.
+
+#### Fig. 3.6.1 How it Works
+![wireframe of how it works section](documents/pp2-wireframe-desktop-how-it-works.png "How it Works Section")
+
+### 3.7 Mobile Footer
+
+* On the mobile version a thin horizontal fixed footer is included containing the application name and a link to the how it works section as the how it works may not be visible on smaller devices even at the beginning before adding names and teams.
+
+#### Fig. 3.7.1 Mobile Footer
+![wireframe of mobile footer](documents/pp2-wireframe-mobile-footer.png "Mobile Footer")
+
 ## 4. future features
 
 There are a number of features that could be added in time. These generally relate to the method of ranking players through awarding points with a view to refining the process based on additional input and analysis.
