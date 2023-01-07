@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let submitMatchResult = document.getElementById('submit-match-result');
     submitMatchResult.addEventListener('click', updatePlayerPoints);
+
+    let deletePlayer = document.getElementById('delete-player');
+    deletePlayer.addEventListener('click', deleteListedPlayer);
 });
 
 /**
