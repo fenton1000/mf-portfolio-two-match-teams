@@ -3,6 +3,9 @@ const players = [];
 document.addEventListener('DOMContentLoaded', function() {
     let submitPlayerName = document.getElementById('submit-player-name');
     submitPlayerName.addEventListener('click', addPlayer);
+
+    let createTeams = document.getElementById('create-teams');
+    createTeams.addEventListener('click', createNextTeams);
 });
 
 /**
