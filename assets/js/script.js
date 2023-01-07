@@ -108,12 +108,14 @@ Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
     }
 
     let teamAList = document.getElementById('team-a');
+    teamAList.innerHTML = '';
 
     for (player of teamA) {
         teamAList.innerHTML += `<p>${player}</p>`;
     }
 
     let teamBList = document.getElementById('team-b');
+    teamBList.innerHTML = '';
 
     for (player of teamB) {
         teamBList.innerHTML += `<p>${player}</p>`;
