@@ -116,3 +116,65 @@ Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
         teamBList.innerHTML += `<p>${player}</p>`;
     }
 }
+
+/**
+ * Function updatePlayerPoints takes match results inputted by the user
+ * and updates player points in the player array accordingly.
+ */
+function updatePlayerPoints() {
+    
+    let teamAScore = document.getElementById('team-a-score').value;
+    let teamBScore = document.getElementById('team-b-score').value;
+
+    /* gathers teamA from index.html */
+    let teamASource = document.getElementById('team-a').children;
+    let teamA = [];
+
+    for (player of teamASource) {
+        let add = player.textContent;
+        teamA.push(add);
+    }
+    /* gathers teamB from index.html */
+    let teamBSource = document.getElementById('team-b').children;
+    let teamB = [];
+
+    for (player of teamBSource) {
+        let add = player.textContent;
+        teamB.push(add);
+    }
+
+    console.log(teamA);
+    console.log(teamB);
+
+    
+    let pointsAwarded; 
+    
+    if (teamBScore > teamAScore) {
+        pointsAwarded = teamBScore - teamAScore;
+    } else {
+        pointsAwarded = teamAScore - teamBScore;
+    }
+    
+    if (teamAScore > teamBScore) {
+           for (player of teamA) {
+            for (let i = 0; i < players.length; i++) {
+                if (player === players[i].playerName) {
+                    players[i].points = players[i].points + pointsAwarded
+                }
+            } 
+        }
+    } else {
+        for (player of teamB) {
+            for (let i = 0; i < players.length; i++) {
+                if (player === players[i].playerName) {
+                    players[i].points = players[i].points + pointsAwarded
+                }
+            } 
+        }
+    }
+    
+    // Re-orders the player array based on latest points from highest to lowest
+    players.sort( function(a,b) {return b.points - a.points});
+    
+    console.log(players);
+}
