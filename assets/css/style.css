@@ -1,0 +1,8 @@
+.delete-player {
+    border: 1px solid black;
+}
+
+.delete-player:hover {
+    background-color: red;
+    color: white;
+}

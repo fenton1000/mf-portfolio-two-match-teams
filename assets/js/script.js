@@ -181,3 +181,54 @@ function updatePlayerPoints() {
     
     console.log(players);
 }
+
+/**
+ * Function deleteListedPlayer deletes user selected players from the player list.
+ * This function runs the deletion process and calls other functions.
+ */
+function deleteListedPlayer() {
+    let playerList = document.getElementById('player-list').children
+    console.log(playerList);
+    for(player of playerList) {
+        player.classList.add('delete-player');
+        player.addEventListener('click', deleteSelectedPlayer);
+    }
+
+    /**
+    * Function deleteSelectedPlayer lives inside and is called by the deletedListedPlayer function
+    * as part of the deletion process once user has selected the individual player to delete.
+    */
+    function deleteSelectedPlayer(event) {
+        let player = event.target.textContent;
+        console.log(player);
+
+        let index;
+
+        for(let i = 0; i < players.length; i++) {
+            if(player === players[i].playerName) {
+                index = i
+            }
+        }
+
+        players.splice(index, 1);
+        console.log(players);
+
+        if( players.length < 1) {
+
+            let newPlayerList = document.getElementById('player-list');
+            newPlayerList.innerHTML = '';
+        } else {
+
+            let newPlayerList = document.getElementById('player-list');
+            let newPlayer = players[0].playerName;
+
+            newPlayerList.innerHTML = `<p>${newPlayer}</p>`;
+
+            for(let i = 1; i < players.length; i++) {
+
+                let newPlayer = players[i].playerName;
+                newPlayerList.innerHTML += `<p>${newPlayer}</p>`;
+            }
+        }
+    }
+}
