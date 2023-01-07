@@ -26,5 +26,7 @@ function addPlayer() {
 
     players.push(playerObject);
 
-    console.log(players);
+    let playerList = document.getElementById('player-list');
+
+    playerList.innerHTML += `<p>${newPlayer}</p>`;
 }
