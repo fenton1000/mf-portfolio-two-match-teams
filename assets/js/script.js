@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     let createTeams = document.getElementById('create-teams');
     createTeams.addEventListener('click', createNextTeams);
+
+    let submitMatchResult = document.getElementById('submit-match-result');
+    submitMatchResult.addEventListener('click', updatePlayerPoints);
 });
 
 /**
