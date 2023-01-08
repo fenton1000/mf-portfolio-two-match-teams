@@ -1,6 +1,9 @@
 const players = [];
 
 document.addEventListener('DOMContentLoaded', function() {
+
+    document.getElementById('enter-name').focus();
+
     let submitPlayerName = document.getElementById('submit-player-name');
     submitPlayerName.addEventListener('click', addPlayer);
 
@@ -25,6 +28,7 @@ function addPlayer() {
         if (newPlayer === nameToCheck) {
             alert('Player name already exists! Please enter alternative name');
             document.getElementById('enter-name').value = '';
+            document.getElementById('enter-name').focus();
             throw 'Name already exists!';
         }
     }
@@ -32,18 +36,21 @@ function addPlayer() {
     if (newPlayer === '') {
         alert('Please enter a player name!');
         document.getElementById('enter-name').value = '';
+        document.getElementById('enter-name').focus();
         throw 'Empty string entered at name!';
     }
 
     if (newPlayer === ' ') {
         alert('Please enter a player name!');
         document.getElementById('enter-name').value = '';
+        document.getElementById('enter-name').focus();
         throw 'Empty string entered at name!';
     }
 
     if (newPlayer === '  ') {
         alert('Please enter a player name!');
         document.getElementById('enter-name').value = '';
+        document.getElementById('enter-name').focus();
         throw 'Empty string entered at name!';
     }
 
@@ -59,6 +66,7 @@ function addPlayer() {
     playerList.innerHTML += `<p>${newPlayer}</p>`;
 
     document.getElementById('enter-name').value = '';
+    document.getElementById('enter-name').focus();
 }
 
 /**
