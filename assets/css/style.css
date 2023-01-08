@@ -39,6 +39,15 @@ h3 {
     margin: 5px;
 }
 
+input {
+    padding: 7px;
+    border-radius: 10px;
+    margin: 10px 5px;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: 15px;
+}
+
 #add-player {
     margin-top: 100px;
 }
