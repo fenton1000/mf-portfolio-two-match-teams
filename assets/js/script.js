@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function addPlayer() {
     let newPlayer = document.getElementById('enter-name').value;
 
-    for (player of players) {
+    for (let player of players) {
         let nameToCheck = player.playerName;
         if (newPlayer === nameToCheck) {
             alert('Player name already exists! Please enter alternative name');
@@ -135,11 +135,11 @@ Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
         }
     }
 
-    for (player of teamAPart2) {
+    for (let player of teamAPart2) {
         teamA.push(player);
     }
 
-    for (player of teamBPart2) {
+    for (let player of teamBPart2) {
         teamB.push(player);
     }
 
@@ -148,7 +148,7 @@ Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
     let teamACheckSource = document.getElementById('team-a').children;
     let teamACheck = [];
 
-    for (player of teamACheckSource) {
+    for (let player of teamACheckSource) {
         let add = player.textContent;
         teamACheck.push(add);
     }
@@ -156,7 +156,7 @@ Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
     let teamBCheckSource = document.getElementById('team-b').children;
     let teamBCheck = [];
 
-    for (player of teamBCheckSource) {
+    for (let player of teamBCheckSource) {
         let add = player.textContent;
         teamBCheck.push(add);
     }
@@ -172,8 +172,8 @@ Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
     if (teamA.length !== teamACheck.length) {
         teamASame = false;
     } else {
-        for (player of teamA) {
-            for (checkPlayer of teamACheck) {
+        for (let player of teamA) {
+            for (let checkPlayer of teamACheck) {
                 if (player === checkPlayer) {
                     indexA = indexA + 1;
                 }
@@ -188,8 +188,8 @@ Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
     if (teamB.length !== teamBCheck.length) {
         teamBSame = false;
     } else {
-        for (player of teamB) {
-            for (checkPlayer of teamBCheck) {
+        for (let player of teamB) {
+            for (let checkPlayer of teamBCheck) {
                 if (player === checkPlayer) {
                     indexB = indexB + 1;
                 }
@@ -218,14 +218,14 @@ Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
     let teamAList = document.getElementById('team-a');
     teamAList.innerHTML = '';
 
-    for (player of teamA) {
+    for (let player of teamA) {
         teamAList.innerHTML += `<p>${player}</p>`;
     }
 
     let teamBList = document.getElementById('team-b');
     teamBList.innerHTML = '';
 
-    for (player of teamB) {
+    for (let player of teamB) {
         teamBList.innerHTML += `<p>${player}</p>`;
     }
 }
@@ -243,7 +243,7 @@ function updatePlayerPoints() {
     let teamASource = document.getElementById('team-a').children;
     let teamA = [];
 
-    for (player of teamASource) {
+    for (let player of teamASource) {
         let add = player.textContent;
         teamA.push(add);
     }
@@ -251,7 +251,7 @@ function updatePlayerPoints() {
     let teamBSource = document.getElementById('team-b').children;
     let teamB = [];
 
-    for (player of teamBSource) {
+    for (let player of teamBSource) {
         let add = player.textContent;
         teamB.push(add);
     }
@@ -268,25 +268,25 @@ function updatePlayerPoints() {
     }
     
     if (teamAScore > teamBScore) {
-           for (player of teamA) {
+           for (let player of teamA) {
             for (let i = 0; i < players.length; i++) {
                 if (player === players[i].playerName) {
-                    players[i].points = players[i].points + pointsAwarded
+                    players[i].points = players[i].points + pointsAwarded;
                 }
             } 
         }
     } else {
-        for (player of teamB) {
+        for (let player of teamB) {
             for (let i = 0; i < players.length; i++) {
                 if (player === players[i].playerName) {
-                    players[i].points = players[i].points + pointsAwarded
+                    players[i].points = players[i].points + pointsAwarded;
                 }
             } 
         }
     }
     
     // Re-orders the player array based on latest points from highest to lowest
-    players.sort( function(a,b) {return b.points - a.points});
+    players.sort( function(a,b) {return b.points - a.points;});
     
     console.log(players);
 }
@@ -296,9 +296,9 @@ function updatePlayerPoints() {
  * This function runs the deletion process and calls other functions.
  */
 function deleteListedPlayer() {
-    let playerList = document.getElementById('player-list').children
+    let playerList = document.getElementById('player-list').children;
     console.log(playerList);
-    for(player of playerList) {
+    for(let player of playerList) {
         player.classList.add('delete-player');
         player.addEventListener('click', deleteSelectedPlayer);
     }
@@ -315,7 +315,7 @@ function deleteListedPlayer() {
 
         for(let i = 0; i < players.length; i++) {
             if(player === players[i].playerName) {
-                index = i
+                index = i;
             }
         }
 
