@@ -38,6 +38,8 @@ function addPlayer() {
     let playerList = document.getElementById('player-list');
 
     playerList.innerHTML += `<p>${newPlayer}</p>`;
+
+    document.getElementById('enter-name').value = '';
 }
 
 /**
