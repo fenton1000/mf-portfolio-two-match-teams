@@ -67,6 +67,15 @@ button {
     border: 1px solid black;
 }
 
+ul {
+    margin-left: 10%;
+    text-align: left;
+}
+
+li {
+    margin: 10px;
+}
+
 input[type = number] {
     width: 15%;
     font-size: 12px;
@@ -95,8 +104,6 @@ input[type = number] {
     float: right;
     width: 50%;
 }
-
-
 
 .delete-player {
     border: 1px solid black;
