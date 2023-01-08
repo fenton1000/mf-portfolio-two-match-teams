@@ -63,9 +63,36 @@ button {
     border: 1px solid black;
 }
 
+input[type = number] {
+    width: 15%;
+    font-size: 12px;
+}
+
 #add-player {
     margin-top: 100px;
 }
+
+#team-a-heading {
+    float: left;
+    width: 50%;
+}
+
+#team-b-heading {
+    float: right;
+    width: 50%;
+}
+
+#team-a {
+    float: left;
+    width: 50%;
+}
+
+#team-b {
+    float: right;
+    width: 50%;
+}
+
+
 
 .delete-player {
     border: 1px solid black;
