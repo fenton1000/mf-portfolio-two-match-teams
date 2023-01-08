@@ -7,6 +7,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let submitPlayerName = document.getElementById('submit-player-name');
     submitPlayerName.addEventListener('click', addPlayer);
 
+    let enterName = document.getElementById('enter-name');
+    enterName.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            addPlayer();
+        }
+    });
+
     let createTeams = document.getElementById('create-teams');
     createTeams.addEventListener('click', createNextTeams);
 
