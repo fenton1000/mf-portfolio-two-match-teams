@@ -107,6 +107,78 @@ Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
         teamB.push(player);
     }
 
+    // Prevent renaming same teams in event of draw
+    // gathers teamACheck from index.html
+    let teamACheckSource = document.getElementById('team-a').children;
+    let teamACheck = [];
+
+    for (player of teamACheckSource) {
+        let add = player.textContent;
+        teamACheck.push(add);
+    }
+    // gathers teamBCheck from index.html
+    let teamBCheckSource = document.getElementById('team-b').children;
+    let teamBCheck = [];
+
+    for (player of teamBCheckSource) {
+        let add = player.textContent;
+        teamBCheck.push(add);
+    }
+
+    console.log(teamACheck);
+    console.log(teamBCheck);
+
+    let teamASame = false;
+    let teamBSame = false;
+    let indexA = 0;
+    let indexB = 0;
+
+    if (teamA.length !== teamACheck.length) {
+        teamASame = false;
+    } else {
+        for (player of teamA) {
+            for (checkPlayer of teamACheck) {
+                if (player === checkPlayer) {
+                    indexA = indexA + 1;
+                }
+            } 
+        }
+
+        if (indexA === teamA.length) {
+            teamASame = true;
+        }
+    }
+
+    if (teamB.length !== teamBCheck.length) {
+        teamBSame = false;
+    } else {
+        for (player of teamB) {
+            for (checkPlayer of teamBCheck) {
+                if (player === checkPlayer) {
+                    indexB = indexB + 1;
+                }
+            } 
+        }
+
+        if (indexB === teamB.length) {
+            teamBSame = true;
+        }
+    }
+
+    if (teamASame || teamBSame) {
+
+        let removeA = teamA[0];
+        teamA.splice(0, 1);
+        let removeB = teamB[0];
+        teamB.splice(0, 1);
+
+        console.log(removeA);
+        console.log(removeB);
+
+        teamA.push(removeB);
+        teamB.push(removeA);
+    }
+
     let teamAList = document.getElementById('team-a');
     teamAList.innerHTML = '';
 
@@ -151,7 +223,6 @@ function updatePlayerPoints() {
     console.log(teamA);
     console.log(teamB);
 
-    
     let pointsAwarded; 
     
     if (teamBScore > teamAScore) {
