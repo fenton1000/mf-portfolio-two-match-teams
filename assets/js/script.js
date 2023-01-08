@@ -24,8 +24,27 @@ function addPlayer() {
         let nameToCheck = player.playerName;
         if (newPlayer === nameToCheck) {
             alert('Player name already exists! Please enter alternative name');
+            document.getElementById('enter-name').value = '';
             throw 'Name already exists!';
         }
+    }
+
+    if (newPlayer === '') {
+        alert('Please enter a player name!');
+        document.getElementById('enter-name').value = '';
+        throw 'Empty string entered at name!';
+    }
+
+    if (newPlayer === ' ') {
+        alert('Please enter a player name!');
+        document.getElementById('enter-name').value = '';
+        throw 'Empty string entered at name!';
+    }
+
+    if (newPlayer === '  ') {
+        alert('Please enter a player name!');
+        document.getElementById('enter-name').value = '';
+        throw 'Empty string entered at name!';
     }
 
     let playerObject = {
