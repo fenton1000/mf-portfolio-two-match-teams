@@ -59,7 +59,7 @@ input {
 button {
     padding: 12px 7px;
     border-radius: 10px;
-    margin: 5px 5px 20px 5px;
+    margin: 5px 5px 30px 5px;
     font-family: inherit;
     font-weight: inherit;
     font-size: 15px;
@@ -119,6 +119,10 @@ input[type = number] {
 #team-b {
     float: right;
     width: 50%;
+}
+
+#how-it-works {
+    margin: 300px 5px 40px 5px;
 }
 
 #top {
