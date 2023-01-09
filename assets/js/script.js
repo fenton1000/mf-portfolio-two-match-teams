@@ -161,9 +161,6 @@ function createNextTeams() {
         teamBCheck.push(add);
     }
 
-    console.log(teamACheck);
-    console.log(teamBCheck);
-
     let teamASame = false;
     let teamBSame = false;
     let indexA = 0;
@@ -207,9 +204,6 @@ function createNextTeams() {
         teamA.splice(0, 1);
         let removeB = teamB[0];
         teamB.splice(0, 1);
-
-        console.log(removeA);
-        console.log(removeB);
 
         teamA.push(removeB);
         teamB.push(removeA);
@@ -256,9 +250,6 @@ function updatePlayerPoints() {
         teamB.push(add);
     }
 
-    console.log(teamA);
-    console.log(teamB);
-
     let pointsAwarded;
 
     if (teamBScore > teamAScore) {
@@ -289,8 +280,6 @@ function updatePlayerPoints() {
     players.sort(function (a, b) {
         return b.points - a.points;
     });
-
-    console.log(players);
 }
 
 /**
@@ -299,7 +288,6 @@ function updatePlayerPoints() {
  */
 function deleteListedPlayer() {
     let playerList = document.getElementById('player-list').children;
-    console.log(playerList);
     for (let player of playerList) {
         player.classList.add('delete-player');
         player.addEventListener('click', deleteSelectedPlayer);
@@ -311,7 +299,6 @@ function deleteListedPlayer() {
      */
     function deleteSelectedPlayer(event) {
         let player = event.target.textContent;
-        console.log(player);
 
         let index;
 
@@ -322,7 +309,6 @@ function deleteListedPlayer() {
         }
 
         players.splice(index, 1);
-        console.log(players);
 
         if (players.length < 1) {
 
