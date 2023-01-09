@@ -99,6 +99,12 @@ footer>a:hover {
     border-radius: 5px;
 }
 
+.warning {
+    color: red;
+    visibility: hidden;
+    margin-top: 5px;
+}
+
 input[type=number] {
     width: 15%;
     font-size: 12px;
@@ -140,6 +146,10 @@ input[type=number] {
     float: right;
 }
 
+.warning-on {
+    visibility: visible;
+}
+
 .delete-player {
     border: 1px solid black;
     padding: 5px;
@@ -160,9 +170,16 @@ input[type=number] {
         left: 60px;
     }
 
-    #player-list {
+    .warning {
         position: fixed;
         top: 120px;
+        left: 60px;
+        width: 20%;
+    }
+
+    #player-list {
+        position: fixed;
+        top: 200px;
         left: 60px;
     }
 

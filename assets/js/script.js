@@ -287,6 +287,7 @@ function updatePlayerPoints() {
  * This function runs the deletion process and calls other functions.
  */
 function deleteListedPlayer() {
+    document.getElementById('warning-message').classList.add('warning-on');
     let playerList = document.getElementById('player-list').children;
     for (let player of playerList) {
         player.classList.add('delete-player');
@@ -327,5 +328,7 @@ function deleteListedPlayer() {
                 newPlayerList.innerHTML += `<p>${newPlayer}</p>`;
             }
         }
+
+        document.getElementById('warning-message').classList.remove('warning-on');
     }
 }
