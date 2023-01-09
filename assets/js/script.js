@@ -33,7 +33,7 @@ function addPlayer() {
     for (let player of players) {
         let nameToCheck = player.playerName;
         if (newPlayer === nameToCheck) {
-            alert('Player name already exists! Please enter alternative name');
+            window.alert('Player name already exists! Please enter alternative name');
             document.getElementById('enter-name').value = '';
             document.getElementById('enter-name').focus();
             throw 'Name already exists!';
@@ -41,21 +41,21 @@ function addPlayer() {
     }
 
     if (newPlayer === '') {
-        alert('Please enter a player name!');
+        window.alert('Please enter a player name!');
         document.getElementById('enter-name').value = '';
         document.getElementById('enter-name').focus();
         throw 'Empty string entered at name!';
     }
 
     if (newPlayer === ' ') {
-        alert('Please enter a player name!');
+        window.alert('Please enter a player name!');
         document.getElementById('enter-name').value = '';
         document.getElementById('enter-name').focus();
         throw 'Empty string entered at name!';
     }
 
     if (newPlayer === '  ') {
-        alert('Please enter a player name!');
+        window.alert('Please enter a player name!');
         document.getElementById('enter-name').value = '';
         document.getElementById('enter-name').focus();
         throw 'Empty string entered at name!';
