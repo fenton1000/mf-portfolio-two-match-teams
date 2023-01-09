@@ -1,6 +1,6 @@
 const players = [];
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('enter-name').focus();
 
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     submitPlayerName.addEventListener('click', addPlayer);
 
     let enterName = document.getElementById('enter-name');
-    enterName.addEventListener('keydown', function(event) {
+    enterName.addEventListener('keydown', function (event) {
         if (event.key === 'Enter') {
             addPlayer();
         }
@@ -82,13 +82,13 @@ function addPlayer() {
  */
 function createNextTeams() {
 
-/* If array = [a, b, c, d, e, f, g, h] Team A = [a, d, e,h] and 
-Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
+    /* If array = [a, b, c, d, e, f, g, h] Team A = [a, d, e,h] and 
+    Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
 
     let firstSort1 = [];
     let firstSort2 = [];
 
-    for (let i=0; i < players.length; i++) {
+    for (let i = 0; i < players.length; i++) {
 
         if (i === 0) {
             let add = players[0].playerName;
@@ -107,7 +107,7 @@ Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
     let teamB = [];
     let teamBPart2 = [];
 
-    for (let i=0; i < firstSort1.length; i++) {
+    for (let i = 0; i < firstSort1.length; i++) {
 
         if (i === 0) {
             let add = firstSort1[0];
@@ -121,7 +121,7 @@ Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
         }
     }
 
-    for (let i=0; i < firstSort2.length; i++) {
+    for (let i = 0; i < firstSort2.length; i++) {
 
         if (i === 0) {
             let add = firstSort2[0];
@@ -177,7 +177,7 @@ Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
                 if (player === checkPlayer) {
                     indexA = indexA + 1;
                 }
-            } 
+            }
         }
 
         if (indexA === teamA.length) {
@@ -193,7 +193,7 @@ Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
                 if (player === checkPlayer) {
                     indexB = indexB + 1;
                 }
-            } 
+            }
         }
 
         if (indexB === teamB.length) {
@@ -235,7 +235,7 @@ Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
  * and updates player points in the player array accordingly.
  */
 function updatePlayerPoints() {
-    
+
     let teamAScore = document.getElementById('team-a-score').value;
     let teamBScore = document.getElementById('team-b-score').value;
 
@@ -259,21 +259,21 @@ function updatePlayerPoints() {
     console.log(teamA);
     console.log(teamB);
 
-    let pointsAwarded; 
-    
+    let pointsAwarded;
+
     if (teamBScore > teamAScore) {
         pointsAwarded = teamBScore - teamAScore;
     } else {
         pointsAwarded = teamAScore - teamBScore;
     }
-    
+
     if (teamAScore > teamBScore) {
-           for (let player of teamA) {
+        for (let player of teamA) {
             for (let i = 0; i < players.length; i++) {
                 if (player === players[i].playerName) {
                     players[i].points = players[i].points + pointsAwarded;
                 }
-            } 
+            }
         }
     } else {
         for (let player of teamB) {
@@ -281,13 +281,15 @@ function updatePlayerPoints() {
                 if (player === players[i].playerName) {
                     players[i].points = players[i].points + pointsAwarded;
                 }
-            } 
+            }
         }
     }
-    
+
     // Re-orders the player array based on latest points from highest to lowest
-    players.sort( function(a,b) {return b.points - a.points;});
-    
+    players.sort(function (a, b) {
+        return b.points - a.points;
+    });
+
     console.log(players);
 }
 
@@ -298,23 +300,23 @@ function updatePlayerPoints() {
 function deleteListedPlayer() {
     let playerList = document.getElementById('player-list').children;
     console.log(playerList);
-    for(let player of playerList) {
+    for (let player of playerList) {
         player.classList.add('delete-player');
         player.addEventListener('click', deleteSelectedPlayer);
     }
 
     /**
-    * Function deleteSelectedPlayer lives inside and is called by the deletedListedPlayer function
-    * as part of the deletion process once user has selected the individual player to delete.
-    */
+     * Function deleteSelectedPlayer lives inside and is called by the deletedListedPlayer function
+     * as part of the deletion process once user has selected the individual player to delete.
+     */
     function deleteSelectedPlayer(event) {
         let player = event.target.textContent;
         console.log(player);
 
         let index;
 
-        for(let i = 0; i < players.length; i++) {
-            if(player === players[i].playerName) {
+        for (let i = 0; i < players.length; i++) {
+            if (player === players[i].playerName) {
                 index = i;
             }
         }
@@ -322,7 +324,7 @@ function deleteListedPlayer() {
         players.splice(index, 1);
         console.log(players);
 
-        if( players.length < 1) {
+        if (players.length < 1) {
 
             let newPlayerList = document.getElementById('player-list');
             newPlayerList.innerHTML = '';
@@ -333,7 +335,7 @@ function deleteListedPlayer() {
 
             newPlayerList.innerHTML = `<p>${newPlayer}</p>`;
 
-            for(let i = 1; i < players.length; i++) {
+            for (let i = 1; i < players.length; i++) {
 
                 let newPlayer = players[i].playerName;
                 newPlayerList.innerHTML += `<p>${newPlayer}</p>`;
