@@ -85,7 +85,7 @@ footer {
     z-index: 2
 }
 
-footer > a {
+footer>a {
     text-decoration: none;
     color: inherit;
     font-style: inherit;
@@ -93,13 +93,13 @@ footer > a {
     margin: 3px 10px;
 }
 
-footer > a:hover {
+footer>a:hover {
     background-color: #b8caaa;
     border: 1px solid black;
     border-radius: 5px;
 }
 
-input[type = number] {
+input[type=number] {
     width: 15%;
     font-size: 12px;
 }
@@ -175,7 +175,7 @@ input[type = number] {
     #team-a-heading {
         width: 45%;
     }
-    
+
     #team-b-heading {
         width: 45%;
     }
