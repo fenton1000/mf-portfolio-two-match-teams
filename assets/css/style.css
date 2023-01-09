@@ -76,6 +76,22 @@ li {
     margin: 10px;
 }
 
+footer {
+    background-color: #9dce76;
+    width: 100%;
+    padding: 3px;
+    position: fixed;
+    bottom: 0;
+    z-index: 2
+}
+
+footer > a {
+    text-decoration: none;
+    color: inherit;
+    font-style: inherit;
+    margin: 3px 10px;
+}
+
 input[type = number] {
     width: 15%;
     font-size: 12px;
@@ -103,6 +119,14 @@ input[type = number] {
 #team-b {
     float: right;
     width: 50%;
+}
+
+#top {
+    float: left;
+}
+
+#how {
+    float: right;
 }
 
 .delete-player {
