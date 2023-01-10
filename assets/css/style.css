@@ -164,16 +164,10 @@ input[type=number] {
 /* For Screens 950px wide and up */
 @media screen and (min-width: 950px) {
 
-    #player-list-heading {
-        position: fixed;
-        top: 100px;
-        left: 60px;
-    }
-
     .warning {
         position: fixed;
-        top: 120px;
-        left: 60px;
+        top: 100px;
+        left: 40px;
         width: 20%;
     }
 

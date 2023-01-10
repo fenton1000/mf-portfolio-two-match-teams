@@ -41,28 +41,32 @@ function printPlayerList() {
     let playerList = document.getElementById('player-list');
 
     playerList.innerHTML = `
-    <h4>Player List:</h4>
+    <h4>Player List</h4>
     <table>
-        <tr>
-            <th>Player Name</th>
-            <th>Player Points</th>
-        </tr>
+        <thead>
+            <tr>
+                <th>Player Name</th>
+                <th>Points</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
     `;
+
+    let tableBody = playerList.getElementsByTagName('tbody')[0];
 
     for (let player of players) {
         let name = player.playerName;
         let points = player.points;
-        playerList.innerHTML += `
+
+        tableBody.innerHTML += `
         <tr>
             <td>${name}</td>
             <td>${points}</td>
         </tr>
         `;
     }
-
-    playerList.innerHTML += `
-    </table>
-    `;
 }
 
 /**
