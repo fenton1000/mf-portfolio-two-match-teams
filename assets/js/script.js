@@ -30,12 +30,22 @@ function addPlayer() {
 
     players.push(playerObject);
 
-    let playerList = document.getElementById('player-list');
-
-    playerList.innerHTML += `<p>${newPlayer}</p>`;
+    printPlayerList();
 
     document.getElementById('enter-name').value = '';
     document.getElementById('enter-name').focus();
+}
+
+function printPlayerList() {
+
+    let playerList = document.getElementById('player-list');
+
+    playerList.innerHTML = '<h4>Player List:</h4>';
+
+    for (let player of players) {
+        let name = player.playerName;
+        playerList.innerHTML += `<p>${name}</p>`;
+    }
 }
 
 /**
