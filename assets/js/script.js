@@ -258,6 +258,9 @@ function updatePlayerPoints() {
     });
 
     printPlayerList()
+
+    document.getElementById('team-a-score').value = '';
+    document.getElementById('team-b-score').value = '';
 }
 
 /**
