@@ -309,6 +309,12 @@ function deleteListedPlayer() {
     }
 }
 
+function enterKey(event) {
+    if (event.key === 'Enter') {
+        addPlayer();
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('enter-name').focus();
@@ -317,11 +323,7 @@ document.addEventListener('DOMContentLoaded', function () {
     submitPlayerName.addEventListener('click', addPlayer);
 
     let enterName = document.getElementById('enter-name');
-    enterName.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter') {
-            addPlayer();
-        }
-    });
+    enterName.addEventListener('keydown', enterKey);
 
     let createTeams = document.getElementById('create-teams');
     createTeams.addEventListener('click', createNextTeams);
