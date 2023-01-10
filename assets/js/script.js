@@ -232,20 +232,11 @@ function updatePlayerPoints() {
 
     /* gathers teamA from index.html */
     let teamASource = document.getElementById('team-a').children;
-    let teamA = [];
+    let teamA = extractTextContent(teamASource);
 
-    for (let player of teamASource) {
-        let add = player.textContent;
-        teamA.push(add);
-    }
     /* gathers teamB from index.html */
     let teamBSource = document.getElementById('team-b').children;
-    let teamB = [];
-
-    for (let player of teamBSource) {
-        let add = player.textContent;
-        teamB.push(add);
-    }
+    let teamB = extractTextContent(teamBSource);
 
     let pointsAwarded;
 
@@ -256,27 +247,48 @@ function updatePlayerPoints() {
     }
 
     if (teamAScore > teamBScore) {
-        for (let player of teamA) {
-            for (let i = 0; i < players.length; i++) {
-                if (player === players[i].playerName) {
-                    players[i].points = players[i].points + pointsAwarded;
-                }
-            }
-        }
+        distributeTeamPoints(teamA, pointsAwarded);
     } else {
-        for (let player of teamB) {
-            for (let i = 0; i < players.length; i++) {
-                if (player === players[i].playerName) {
-                    players[i].points = players[i].points + pointsAwarded;
-                }
-            }
-        }
+        distributeTeamPoints(teamB, pointsAwarded);
     }
 
     // Re-orders the player array based on latest points from highest to lowest
     players.sort(function (a, b) {
         return b.points - a.points;
     });
+
+    printPlayerList()
+}
+
+/**
+ * extractTextContent Function takes an array of html elements and returns an array of
+ * their text content strings.
+ */
+function extractTextContent(elementArray) {
+
+    let stringArray = [];
+
+    for (let element of elementArray) {
+        let add = element.textContent;
+        stringArray.push(add);
+    }
+
+    return stringArray;
+}
+
+/**
+ * distributeTeamPoints function is called by the updatePlayerPoints function 
+ * and it adds points in the players array for players on the winning team.
+ */
+
+function distributeTeamPoints (team, pointsAwarded) {
+    for (let player of team) {
+        for (let i = 0; i < players.length; i++) {
+            if (player === players[i].playerName) {
+                players[i].points = players[i].points + pointsAwarded;
+            }
+        }
+    }
 }
 
 /**
