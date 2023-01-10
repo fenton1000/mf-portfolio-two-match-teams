@@ -12,7 +12,7 @@ function addPlayer() {
             window.alert('Player name already exists! Please enter alternative name');
             document.getElementById('enter-name').value = '';
             document.getElementById('enter-name').focus();
-            throw 'Name already exists!';
+            return;
         }
     }
 
