@@ -1,4 +1,4 @@
-const players = [];
+let players = [];
 
 document.addEventListener('DOMContentLoaded', function () {
 
