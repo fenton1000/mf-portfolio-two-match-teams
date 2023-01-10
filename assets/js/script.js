@@ -16,25 +16,11 @@ function addPlayer() {
         }
     }
 
-    if (newPlayer === '') {
+    if (newPlayer.trim().length === 0) {
         window.alert('Please enter a player name!');
         document.getElementById('enter-name').value = '';
         document.getElementById('enter-name').focus();
-        throw 'Empty string entered at name!';
-    }
-
-    if (newPlayer === ' ') {
-        window.alert('Please enter a player name!');
-        document.getElementById('enter-name').value = '';
-        document.getElementById('enter-name').focus();
-        throw 'Empty string entered at name!';
-    }
-
-    if (newPlayer === '  ') {
-        window.alert('Please enter a player name!');
-        document.getElementById('enter-name').value = '';
-        document.getElementById('enter-name').focus();
-        throw 'Empty string entered at name!';
+        return;
     }
 
     let playerObject = {
