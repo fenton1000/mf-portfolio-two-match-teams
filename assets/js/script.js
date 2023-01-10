@@ -36,6 +36,10 @@ function addPlayer() {
     document.getElementById('enter-name').focus();
 }
 
+/**
+ * Function printPlayerList prints
+ * the current player names and points to screen when called.
+ */
 function printPlayerList() {
 
     let playerList = document.getElementById('player-list');
