@@ -1,9 +1,11 @@
 let players = [];
+let mostRecentOverwritten = [];
 
 /**
  * Function addPlayer adds user inputted player name to player object array.
  */
 function addPlayer() {
+
     let newPlayer = document.getElementById('enter-name').value;
 
     for (let player of players) {
@@ -339,6 +341,30 @@ function deleteSelectedPlayer(event) {
     printPlayerList()
     
     document.getElementById('warning-message').classList.remove('warning-on');
+}
+
+/**
+ * recordScreenRank function creates an array of
+ * player names as per the display on screen and returns it.
+ */
+function recordScreenRank() {
+
+    let check = document.getElementsByTagName('tbody')[0];
+
+    if (check === undefined) {
+        return;
+    }
+
+    let playerDetailRows = document.getElementsByTagName('tbody')[0].children;
+
+    let playerRank =[];
+    
+    for(let player of playerDetailRows) {
+        let add = player.children[0].textContent;
+        playerRank.push(add);
+    }
+
+    return playerRank;
 }
 
 /**
