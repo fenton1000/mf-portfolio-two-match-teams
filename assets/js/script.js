@@ -1,29 +1,5 @@
 let players = [];
 
-document.addEventListener('DOMContentLoaded', function () {
-
-    document.getElementById('enter-name').focus();
-
-    let submitPlayerName = document.getElementById('submit-player-name');
-    submitPlayerName.addEventListener('click', addPlayer);
-
-    let enterName = document.getElementById('enter-name');
-    enterName.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter') {
-            addPlayer();
-        }
-    });
-
-    let createTeams = document.getElementById('create-teams');
-    createTeams.addEventListener('click', createNextTeams);
-
-    let submitMatchResult = document.getElementById('submit-match-result');
-    submitMatchResult.addEventListener('click', updatePlayerPoints);
-
-    let deletePlayer = document.getElementById('delete-player');
-    deletePlayer.addEventListener('click', deleteListedPlayer);
-});
-
 /**
  * Function addPlayer adds user inputted player name to player object array.
  */
@@ -332,3 +308,27 @@ function deleteListedPlayer() {
         document.getElementById('warning-message').classList.remove('warning-on');
     }
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    document.getElementById('enter-name').focus();
+
+    let submitPlayerName = document.getElementById('submit-player-name');
+    submitPlayerName.addEventListener('click', addPlayer);
+
+    let enterName = document.getElementById('enter-name');
+    enterName.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+            addPlayer();
+        }
+    });
+
+    let createTeams = document.getElementById('create-teams');
+    createTeams.addEventListener('click', createNextTeams);
+
+    let submitMatchResult = document.getElementById('submit-match-result');
+    submitMatchResult.addEventListener('click', updatePlayerPoints);
+
+    let deletePlayer = document.getElementById('delete-player');
+    deletePlayer.addEventListener('click', deleteListedPlayer);
+});
