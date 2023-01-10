@@ -296,50 +296,46 @@ function distributeTeamPoints (team, pointsAwarded) {
  * This function runs the deletion process and calls other functions.
  */
 function deleteListedPlayer() {
+
     document.getElementById('warning-message').classList.add('warning-on');
-    let playerList = document.getElementById('player-list').children;
-    for (let player of playerList) {
+
+    let playerDetailRows = document.getElementsByTagName('tbody')[0].children;
+
+    let playerNameCells =[];
+    
+    for(let player of playerDetailRows) {
+        let add = player.children[0];
+        playerNameCells.push(add);
+    }
+
+    for (let player of playerNameCells) {
         player.classList.add('delete-player');
         player.addEventListener('click', deleteSelectedPlayer);
+    }    
+}
+
+/**
+* Function deleteSelectedPlayer lives inside and is called by the deletedListedPlayer function
+* as part of the deletion process once user has selected the individual player to delete.
+*/
+function deleteSelectedPlayer(event) {
+    let playerCell = event.target;
+
+    let player = playerCell.textContent;
+
+    let index;
+
+    for (let i = 0; i < players.length; i++) {
+        if (player === players[i].playerName) {
+            index = i;
+        }
     }
 
-    /**
-     * Function deleteSelectedPlayer lives inside and is called by the deletedListedPlayer function
-     * as part of the deletion process once user has selected the individual player to delete.
-     */
-    function deleteSelectedPlayer(event) {
-        let player = event.target.textContent;
+    players.splice(index, 1);
 
-        let index;
-
-        for (let i = 0; i < players.length; i++) {
-            if (player === players[i].playerName) {
-                index = i;
-            }
-        }
-
-        players.splice(index, 1);
-
-        if (players.length < 1) {
-
-            let newPlayerList = document.getElementById('player-list');
-            newPlayerList.innerHTML = '';
-        } else {
-
-            let newPlayerList = document.getElementById('player-list');
-            let newPlayer = players[0].playerName;
-
-            newPlayerList.innerHTML = `<p>${newPlayer}</p>`;
-
-            for (let i = 1; i < players.length; i++) {
-
-                let newPlayer = players[i].playerName;
-                newPlayerList.innerHTML += `<p>${newPlayer}</p>`;
-            }
-        }
-
-        document.getElementById('warning-message').classList.remove('warning-on');
-    }
+    printPlayerList()
+    
+    document.getElementById('warning-message').classList.remove('warning-on');
 }
 
 /**
