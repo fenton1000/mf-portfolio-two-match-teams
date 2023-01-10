@@ -309,6 +309,11 @@ function deleteListedPlayer() {
     }
 }
 
+/**
+ * Function enterKey is called by the keydown event listener connected to the enter-name input element.
+ * Calls the addPlayer function when enter key pressed.
+ */
+
 function enterKey(event) {
     if (event.key === 'Enter') {
         addPlayer();
