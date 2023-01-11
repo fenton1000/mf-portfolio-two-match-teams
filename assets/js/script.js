@@ -231,10 +231,17 @@ function createNextTeams() {
  */
 function updatePlayerPoints() {
 
-    mostRecentOverwritten = recordScreenRank();
-
     let teamAScore = document.getElementById('team-a-score').value;
     let teamBScore = document.getElementById('team-b-score').value;
+
+    if (teamAScore.trim().length === 0 || teamBScore.trim().length === 0) {
+        window.alert('Please enter team scores!');
+        document.getElementById('team-a-score').value = '';
+        document.getElementById('team-a-score').focus();
+        return;
+    }
+
+    mostRecentOverwritten = recordScreenRank();
 
     /* gathers teamA from index.html */
     let teamASource = document.getElementById('team-a').children;
