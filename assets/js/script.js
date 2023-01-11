@@ -2,7 +2,7 @@ let players = [];
 let mostRecentOverwritten = [];
 
 /**
- * Function addPlayer adds user inputted player name to player object array.
+ * addPlayer function adds user inputted player name to player object array.
  */
 function addPlayer() {
 
@@ -41,7 +41,7 @@ function addPlayer() {
 }
 
 /**
- * Function printPlayerList prints
+ * printPlayerList function prints
  * the current player names and points to screen when called.
  */
 function printPlayerList() {
@@ -78,7 +78,7 @@ function printPlayerList() {
 }
 
 /**
- * Function createNextTeams runs the process to send Team A and Team B to the user screen
+ * createNextTeams function runs the process to send Team A and Team B to the user screen
  * when the Create Teams button is clicked.
  */
 function createNextTeams() {
@@ -153,7 +153,7 @@ function createNextTeams() {
 }
 
 /**
- * createTeams Function creates teamA and teamB from the players array. If array = [a, b, c, d],
+ * createTeams function creates teamA and teamB from the players array. If array = [a, b, c, d],
  * then Team A = [a, d] and Team B = [b, c].
  */
 function createTeams() {
@@ -183,8 +183,10 @@ function createTeams() {
 }
 
 /**
- * split Function takes an array and splits it in two based on even and odd index.
+ * split function takes an array and splits it in two based on even and odd index.
  * 0 index placed in evens array. Returns two arrays.
+ * @param {!Array} array
+ * @returns {!Array} evenOdd An array containing the two arrays the passed array was split into.
  */
 function split(array) {
 
@@ -210,7 +212,8 @@ function split(array) {
 }
 
 /**
- * shuffleTeams function shuffles the last team by one player to create next teams.
+ * shuffleTeams function shuffles the last teams by one player to create next teams.
+ * @returns {!Array} teams An array containing two arrays teamA and teamB.
  */
 function shuffleTeams() {
 
@@ -245,7 +248,7 @@ function shuffleTeams() {
 }
 
 /**
- * Function updatePlayerPoints takes match results inputted by the user
+ * updatePlayerPoints function takes match results inputted by the user
  * and updates player points in the player array accordingly.
  */
 function updatePlayerPoints() {
@@ -295,8 +298,10 @@ function updatePlayerPoints() {
 }
 
 /**
- * extractTextContent Function takes an array of html elements and returns an array of
+ * extractTextContent function takes an array of html elements and returns an array of
  * their text content strings.
+ * @param {!Array} elementArray
+ * @returns {!Array} stringArray
  */
 function extractTextContent(elementArray) {
 
@@ -313,6 +318,8 @@ function extractTextContent(elementArray) {
 /**
  * distributeTeamPoints function is called by the updatePlayerPoints function 
  * and it adds points in the players array for players on the winning team.
+ * @param {!Array<string>} team
+ * @param {number} pointsAwarded
  */
 
 function distributeTeamPoints(team, pointsAwarded) {
@@ -373,8 +380,12 @@ function deleteSelectedPlayer(event) {
     document.getElementById('cancel').classList.remove('cancel-button-on');
 }
 
-function cancelDelete () {
-    
+/**
+ * cancelDelete function turns off the delete option when called by the
+ * cancel button event listener.
+ */
+function cancelDelete() {
+
     document.getElementById('warning-message').classList.remove('warning-on');
     document.getElementById('cancel').classList.remove('cancel-button-on');
     let playerDetailRows = document.getElementsByTagName('tbody')[0].children;
@@ -394,6 +405,7 @@ function cancelDelete () {
 /**
  * recordScreenRank function creates an array of
  * player names as per the display on screen and returns it.
+ * @returns {!Array<string>} playerRank
  */
 function recordScreenRank() {
 
