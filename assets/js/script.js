@@ -332,6 +332,7 @@ function distributeTeamPoints(team, pointsAwarded) {
 function deleteListedPlayer() {
 
     document.getElementById('warning-message').classList.add('warning-on');
+    document.getElementById('cancel').classList.add('cancel-button-on');
     let playerDetailRows = document.getElementsByTagName('tbody')[0].children;
     let playerNameCells = [];
 
@@ -369,6 +370,25 @@ function deleteSelectedPlayer(event) {
     printPlayerList();
 
     document.getElementById('warning-message').classList.remove('warning-on');
+    document.getElementById('cancel').classList.remove('cancel-button-on');
+}
+
+function cancelDelete () {
+    
+    document.getElementById('warning-message').classList.remove('warning-on');
+    document.getElementById('cancel').classList.remove('cancel-button-on');
+    let playerDetailRows = document.getElementsByTagName('tbody')[0].children;
+    let playerNameCells = [];
+
+    for (let player of playerDetailRows) {
+        let add = player.children[0];
+        playerNameCells.push(add);
+    }
+
+    for (let player of playerNameCells) {
+        player.classList.remove('delete-player');
+        player.removeEventListener('click', deleteSelectedPlayer);
+    }
 }
 
 /**
@@ -421,4 +441,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let deletePlayer = document.getElementById('delete-player');
     deletePlayer.addEventListener('click', deleteListedPlayer);
+
+    let cancel = document.getElementById('cancel');
+    cancel.addEventListener('click', cancelDelete);
 });
