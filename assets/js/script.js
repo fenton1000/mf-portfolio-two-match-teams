@@ -25,6 +25,8 @@ function addPlayer() {
         return;
     }
 
+    mostRecentOverwritten = recordScreenRank()
+
     let playerObject = {
         playerName: newPlayer,
         points: 0
@@ -229,6 +231,8 @@ function createNextTeams() {
  */
 function updatePlayerPoints() {
 
+    mostRecentOverwritten = recordScreenRank();
+
     let teamAScore = document.getElementById('team-a-score').value;
     let teamBScore = document.getElementById('team-b-score').value;
 
@@ -324,6 +328,9 @@ function deleteListedPlayer() {
 * as part of the deletion process once user has selected the individual player to delete.
 */
 function deleteSelectedPlayer(event) {
+
+    mostRecentOverwritten = recordScreenRank()
+
     let playerCell = event.target;
 
     let player = playerCell.textContent;
