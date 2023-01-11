@@ -124,11 +124,17 @@ function createNextTeams() {
 
         teamA = [...A];
         teamB = [...B];
+
+        document.getElementById('shuffle-message').classList.remove('shuffle-on');
+        document.getElementById('ranking-message').classList.add('ranking-on');
     } else {
         let [A, B] = shuffleTeams();
 
         teamA = [...A];
         teamB = [...B];
+
+        document.getElementById('ranking-message').classList.remove('ranking-on');
+        document.getElementById('shuffle-message').classList.add('shuffle-on');
     }
 
     let teamAList = document.getElementById('team-a');

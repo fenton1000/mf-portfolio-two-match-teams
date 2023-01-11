@@ -99,6 +99,14 @@ footer>a:hover {
     border-radius: 5px;
 }
 
+.ranking {
+    display: none;
+}
+
+.shuffle {
+    display: none;
+}
+
 .warning {
     color: red;
     visibility: hidden;
@@ -144,6 +152,14 @@ input[type=number] {
 
 #how {
     float: right;
+}
+
+.ranking-on {
+    display: block;
+}
+
+.shuffle-on {
+    display: block;
 }
 
 .warning-on {
