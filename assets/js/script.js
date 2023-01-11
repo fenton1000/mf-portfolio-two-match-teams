@@ -25,7 +25,7 @@ function addPlayer() {
         return;
     }
 
-    mostRecentOverwritten = recordScreenRank()
+    mostRecentOverwritten = recordScreenRank();
 
     let playerObject = {
         playerName: newPlayer,
@@ -84,7 +84,6 @@ function printPlayerList() {
 function createNextTeams() {
 
     //First checks if the players array order has changed.
-
     let currentPlayerArray = [];
 
     for (let player of players) {
@@ -100,7 +99,7 @@ function createNextTeams() {
         arrayChanged = true;
     } else {
 
-        for (i = 0; i < currentPlayerArray.length; i++) {
+        for (let i = 0; i < currentPlayerArray.length; i++) {
             if (currentPlayerArray[i] === mostRecentOverwritten[i]) {
                 indexCount = indexCount + 1;
             }
@@ -113,22 +112,19 @@ function createNextTeams() {
         }
     }
 
-    mostRecentOverwritten = recordScreenRank()
+    mostRecentOverwritten = recordScreenRank();
 
     let teamA = [];
     let teamB = [];
 
     //Now chooses the appropriate function.
-
     if (arrayChanged === true) {
 
         let [A, B] = createTeams();
 
         teamA = [...A];
         teamB = [...B];
-
     } else {
-
         let [A, B] = shuffleTeams();
 
         teamA = [...A];
@@ -150,7 +146,6 @@ function createNextTeams() {
     }
 }
 
-
 /**
  * createTeams Function creates teamA and teamB from the players array. If array = [a, b, c, d],
  * then Team A = [a, d] and Team B = [b, c].
@@ -166,9 +161,7 @@ function createTeams() {
     }
 
     let [firstSortA, firstSortB] = split(currentPlayerArray);
-
     let [teamA, teamBEnd] = split(firstSortA);
-
     let [teamB, teamAEnd] = split(firstSortB);
 
     for (let player of teamAEnd) {
@@ -180,7 +173,6 @@ function createTeams() {
     }
 
     let teams = [teamA, teamB];
-
     return teams;
 }
 
@@ -188,7 +180,6 @@ function createTeams() {
  * split Function takes an array and splits it in two based on even and odd index.
  * 0 index placed in evens array. Returns two arrays.
  */
-
 function split(array) {
 
     let even = [];
@@ -209,14 +200,12 @@ function split(array) {
     }
 
     let evenOdd = [even, odd];
-
     return evenOdd;
 }
 
 /**
  * shuffleTeams function shuffles the last team by one player to create next teams.
  */
-
 function shuffleTeams() {
 
     // gathers teamA from index.html
@@ -245,8 +234,7 @@ function shuffleTeams() {
     teamA.push(removeB);
     teamB.push(removeA);
 
-    let teams = [teamA, teamB]
-
+    let teams = [teamA, teamB];
     return teams;
 }
 
@@ -277,7 +265,6 @@ function updatePlayerPoints() {
     let teamB = extractTextContent(teamBSource);
 
     let pointsAwarded;
-
     if (teamBScore > teamAScore) {
         pointsAwarded = teamBScore - teamAScore;
     } else {
@@ -295,7 +282,7 @@ function updatePlayerPoints() {
         return b.points - a.points;
     });
 
-    printPlayerList()
+    printPlayerList();
 
     document.getElementById('team-a-score').value = '';
     document.getElementById('team-b-score').value = '';
@@ -339,9 +326,7 @@ function distributeTeamPoints(team, pointsAwarded) {
 function deleteListedPlayer() {
 
     document.getElementById('warning-message').classList.add('warning-on');
-
     let playerDetailRows = document.getElementsByTagName('tbody')[0].children;
-
     let playerNameCells = [];
 
     for (let player of playerDetailRows) {
@@ -361,12 +346,10 @@ function deleteListedPlayer() {
  */
 function deleteSelectedPlayer(event) {
 
-    mostRecentOverwritten = recordScreenRank()
+    mostRecentOverwritten = recordScreenRank();
 
     let playerCell = event.target;
-
     let player = playerCell.textContent;
-
     let index;
 
     for (let i = 0; i < players.length; i++) {
@@ -377,7 +360,7 @@ function deleteSelectedPlayer(event) {
 
     players.splice(index, 1);
 
-    printPlayerList()
+    printPlayerList();
 
     document.getElementById('warning-message').classList.remove('warning-on');
 }
@@ -389,13 +372,11 @@ function deleteSelectedPlayer(event) {
 function recordScreenRank() {
 
     let check = document.getElementsByTagName('tbody')[0];
-
     if (check === undefined) {
         return;
     }
 
     let playerDetailRows = document.getElementsByTagName('tbody')[0].children;
-
     let playerRank = [];
 
     for (let player of playerDetailRows) {
@@ -410,7 +391,6 @@ function recordScreenRank() {
  * Function enterKey is called by the keydown event listener connected to the enter-name input element.
  * Calls the addPlayer function when enter key pressed.
  */
-
 function enterKey(event) {
     if (event.key === 'Enter') {
         addPlayer();
