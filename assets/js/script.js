@@ -118,91 +118,21 @@ function createNextTeams() {
     let teamA = [];
     let teamB = [];
 
+    //Now chooses the appropriate function.
+
     if (arrayChanged === true) {
 
-        /* If array = [a, b, c, d, e, f, g, h] Team A = [a, d, e,h] and 
-        Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
+        let [A, B] = createTeams();
 
-        let firstSort1 = [];
-        let firstSort2 = [];
-
-        for (let i = 0; i < players.length; i++) {
-
-            if (i === 0) {
-                let add = players[0].playerName;
-                firstSort1.push(add);
-            } else if (i % 2 === 0) {
-                let add = players[i].playerName;
-                firstSort1.push(add);
-            } else {
-                let add = players[i].playerName;
-                firstSort2.push(add);
-            }
-        }
-
-        let teamAPart2 = [];
-        let teamBPart2 = [];
-
-        for (let i = 0; i < firstSort1.length; i++) {
-
-            if (i === 0) {
-                let add = firstSort1[0];
-                teamA.push(add);
-            } else if (i % 2 === 0) {
-                let add = firstSort1[i];
-                teamA.push(add);
-            } else {
-                let add = firstSort1[i];
-                teamBPart2.push(add);
-            }
-        }
-
-        for (let i = 0; i < firstSort2.length; i++) {
-
-            if (i === 0) {
-                let add = firstSort2[0];
-                teamB.push(add);
-            } else if (i % 2 === 0) {
-                let add = firstSort2[i];
-                teamB.push(add);
-            } else {
-                let add = firstSort2[i];
-                teamAPart2.push(add);
-            }
-        }
-
-        for (let player of teamAPart2) {
-            teamA.push(player);
-        }
-
-        for (let player of teamBPart2) {
-            teamB.push(player);
-        }
+        teamA = [...A];
+        teamB = [...B];
 
     } else {
 
-        // gathers teamA from index.html
-        let teamASource = document.getElementById('team-a').children;
+        let [A, B] = shuffleTeams();
 
-        for (let player of teamASource) {
-            let add = player.textContent;
-            teamA.push(add);
-        }
-        // gathers teamB from index.html
-        let teamBSource = document.getElementById('team-b').children;
-
-        for (let player of teamBSource) {
-            let add = player.textContent;
-            teamB.push(add);
-        }
-
-        let removeA = teamA[0];
-        teamA.splice(0, 1);
-        let removeB = teamB[0];
-        teamB.splice(0, 1);
-
-        teamA.push(removeB);
-        teamB.push(removeA);
+        teamA = [...A];
+        teamB = [...B];
     }
 
     let teamAList = document.getElementById('team-a');
@@ -218,6 +148,106 @@ function createNextTeams() {
     for (let player of teamB) {
         teamBList.innerHTML += `<p>${player}</p>`;
     }
+}
+
+
+/**
+ * createTeams Function creates teamA and teamB from the players array. If array = [a, b, c, d],
+ * then Team A = [a, d] and Team B = [b, c].
+ */
+function createTeams() {
+
+    let currentPlayerArray = [];
+
+    for (let player of players) {
+
+        let add = player.playerName;
+        currentPlayerArray.push(add);
+    }
+
+    let [firstSortA, firstSortB] = split(currentPlayerArray);
+
+    let [teamA, teamBEnd] = split(firstSortA);
+
+    let [teamB, teamAEnd] = split(firstSortB);
+
+    for (let player of teamAEnd) {
+        teamA.push(player);
+    }
+
+    for (let player of teamBEnd) {
+        teamB.push(player);
+    }
+
+    let teams = [teamA, teamB];
+
+    return teams;
+}
+
+/**
+ * split Function takes an array and splits it in two based on even and odd index.
+ * 0 index placed in evens array. Returns two arrays.
+ */
+
+function split(array) {
+
+    let even = [];
+    let odd = [];
+
+    for (let i = 0; i < array.length; i++) {
+
+        if (i === 0) {
+            let add = array[0];
+            even.push(add);
+        } else if (i % 2 === 0) {
+            let add = array[i];
+            even.push(add);
+        } else {
+            let add = array[i];
+            odd.push(add);
+        }
+    }
+
+    let evenOdd = [even, odd];
+
+    return evenOdd;
+}
+
+/**
+ * shuffleTeams function shuffles the last team by one player to create next teams.
+ */
+
+function shuffleTeams() {
+
+    // gathers teamA from index.html
+    let teamASource = document.getElementById('team-a').children;
+    let teamA = [];
+
+    for (let player of teamASource) {
+        let add = player.textContent;
+        teamA.push(add);
+    }
+
+    // gathers teamB from index.html
+    let teamBSource = document.getElementById('team-b').children;
+    let teamB = [];
+
+    for (let player of teamBSource) {
+        let add = player.textContent;
+        teamB.push(add);
+    }
+
+    let removeA = teamA[0];
+    teamA.splice(0, 1);
+    let removeB = teamB[0];
+    teamB.splice(0, 1);
+
+    teamA.push(removeB);
+    teamB.push(removeA);
+
+    let teams = [teamA, teamB]
+
+    return teams;
 }
 
 /**
