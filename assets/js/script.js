@@ -78,128 +78,123 @@ function printPlayerList() {
 }
 
 /**
- * Function createNextTeams creates two team selections from the players array
- * based on array index. Sends Team A and Team B to user screen.
+ * Function createNextTeams runs the process to send Team A and Team B to the user screen
+ * when the Create Teams button is clicked.
  */
 function createNextTeams() {
 
-    /* If array = [a, b, c, d, e, f, g, h] Team A = [a, d, e,h] and 
-    Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
+    //First checks if the players array order has changed.
 
-    let firstSort1 = [];
-    let firstSort2 = [];
+    let currentPlayerArray = [];
 
-    for (let i = 0; i < players.length; i++) {
+    for (let player of players) {
 
-        if (i === 0) {
-            let add = players[0].playerName;
-            firstSort1.push(add);
-        } else if (i % 2 === 0) {
-            let add = players[i].playerName;
-            firstSort1.push(add);
+        let add = player.playerName;
+        currentPlayerArray.push(add);
+    }
+
+    let arrayChanged = true;
+    let indexCount = 0;
+
+    if (currentPlayerArray.length !== mostRecentOverwritten.length) {
+        arrayChanged = true;
+    } else {
+
+        for (i = 0; i < currentPlayerArray.length; i++) {
+            if (currentPlayerArray[i] === mostRecentOverwritten[i]) {
+                indexCount = indexCount + 1;
+            }
+        }
+
+        if (indexCount === currentPlayerArray.length) {
+            arrayChanged = false;
         } else {
-            let add = players[i].playerName;
-            firstSort2.push(add);
+            arrayChanged = true;
         }
     }
+
+    mostRecentOverwritten = recordScreenRank()
 
     let teamA = [];
-    let teamAPart2 = [];
     let teamB = [];
-    let teamBPart2 = [];
 
-    for (let i = 0; i < firstSort1.length; i++) {
+    if (arrayChanged === true) {
 
-        if (i === 0) {
-            let add = firstSort1[0];
-            teamA.push(add);
-        } else if (i % 2 === 0) {
-            let add = firstSort1[i];
-            teamA.push(add);
-        } else {
-            let add = firstSort1[i];
-            teamBPart2.push(add);
-        }
-    }
+        /* If array = [a, b, c, d, e, f, g, h] Team A = [a, d, e,h] and 
+        Team B = [b, c, f, g]. Hence the initial sort and second sort below. */
 
-    for (let i = 0; i < firstSort2.length; i++) {
+        let firstSort1 = [];
+        let firstSort2 = [];
 
-        if (i === 0) {
-            let add = firstSort2[0];
-            teamB.push(add);
-        } else if (i % 2 === 0) {
-            let add = firstSort2[i];
-            teamB.push(add);
-        } else {
-            let add = firstSort2[i];
-            teamAPart2.push(add);
-        }
-    }
+        for (let i = 0; i < players.length; i++) {
 
-    for (let player of teamAPart2) {
-        teamA.push(player);
-    }
-
-    for (let player of teamBPart2) {
-        teamB.push(player);
-    }
-
-    // Prevent renaming same teams in event of draw
-    // gathers teamACheck from index.html
-    let teamACheckSource = document.getElementById('team-a').children;
-    let teamACheck = [];
-
-    for (let player of teamACheckSource) {
-        let add = player.textContent;
-        teamACheck.push(add);
-    }
-    // gathers teamBCheck from index.html
-    let teamBCheckSource = document.getElementById('team-b').children;
-    let teamBCheck = [];
-
-    for (let player of teamBCheckSource) {
-        let add = player.textContent;
-        teamBCheck.push(add);
-    }
-
-    let teamASame = false;
-    let teamBSame = false;
-    let indexA = 0;
-    let indexB = 0;
-
-    if (teamA.length !== teamACheck.length) {
-        teamASame = false;
-    } else {
-        for (let player of teamA) {
-            for (let checkPlayer of teamACheck) {
-                if (player === checkPlayer) {
-                    indexA = indexA + 1;
-                }
+            if (i === 0) {
+                let add = players[0].playerName;
+                firstSort1.push(add);
+            } else if (i % 2 === 0) {
+                let add = players[i].playerName;
+                firstSort1.push(add);
+            } else {
+                let add = players[i].playerName;
+                firstSort2.push(add);
             }
         }
 
-        if (indexA === teamA.length) {
-            teamASame = true;
-        }
-    }
+        let teamAPart2 = [];
+        let teamBPart2 = [];
 
-    if (teamB.length !== teamBCheck.length) {
-        teamBSame = false;
-    } else {
-        for (let player of teamB) {
-            for (let checkPlayer of teamBCheck) {
-                if (player === checkPlayer) {
-                    indexB = indexB + 1;
-                }
+        for (let i = 0; i < firstSort1.length; i++) {
+
+            if (i === 0) {
+                let add = firstSort1[0];
+                teamA.push(add);
+            } else if (i % 2 === 0) {
+                let add = firstSort1[i];
+                teamA.push(add);
+            } else {
+                let add = firstSort1[i];
+                teamBPart2.push(add);
             }
         }
 
-        if (indexB === teamB.length) {
-            teamBSame = true;
-        }
-    }
+        for (let i = 0; i < firstSort2.length; i++) {
 
-    if (teamASame || teamBSame) {
+            if (i === 0) {
+                let add = firstSort2[0];
+                teamB.push(add);
+            } else if (i % 2 === 0) {
+                let add = firstSort2[i];
+                teamB.push(add);
+            } else {
+                let add = firstSort2[i];
+                teamAPart2.push(add);
+            }
+        }
+
+        for (let player of teamAPart2) {
+            teamA.push(player);
+        }
+
+        for (let player of teamBPart2) {
+            teamB.push(player);
+        }
+
+    } else {
+
+        // gathers teamA from index.html
+        let teamASource = document.getElementById('team-a').children;
+
+        for (let player of teamASource) {
+            let add = player.textContent;
+            teamA.push(add);
+        }
+        // gathers teamB from index.html
+        let teamBSource = document.getElementById('team-b').children;
+
+        for (let player of teamBSource) {
+            let add = player.textContent;
+            teamB.push(add);
+        }
 
         let removeA = teamA[0];
         teamA.splice(0, 1);
@@ -297,7 +292,7 @@ function extractTextContent(elementArray) {
  * and it adds points in the players array for players on the winning team.
  */
 
-function distributeTeamPoints (team, pointsAwarded) {
+function distributeTeamPoints(team, pointsAwarded) {
     for (let player of team) {
         for (let i = 0; i < players.length; i++) {
             if (player === players[i].playerName) {
@@ -317,9 +312,9 @@ function deleteListedPlayer() {
 
     let playerDetailRows = document.getElementsByTagName('tbody')[0].children;
 
-    let playerNameCells =[];
-    
-    for(let player of playerDetailRows) {
+    let playerNameCells = [];
+
+    for (let player of playerDetailRows) {
         let add = player.children[0];
         playerNameCells.push(add);
     }
@@ -327,13 +322,13 @@ function deleteListedPlayer() {
     for (let player of playerNameCells) {
         player.classList.add('delete-player');
         player.addEventListener('click', deleteSelectedPlayer);
-    }    
+    }
 }
 
 /**
-* Function deleteSelectedPlayer lives inside and is called by the deletedListedPlayer function
-* as part of the deletion process once user has selected the individual player to delete.
-*/
+ * Function deleteSelectedPlayer lives inside and is called by the deletedListedPlayer function
+ * as part of the deletion process once user has selected the individual player to delete.
+ */
 function deleteSelectedPlayer(event) {
 
     mostRecentOverwritten = recordScreenRank()
@@ -353,7 +348,7 @@ function deleteSelectedPlayer(event) {
     players.splice(index, 1);
 
     printPlayerList()
-    
+
     document.getElementById('warning-message').classList.remove('warning-on');
 }
 
@@ -371,9 +366,9 @@ function recordScreenRank() {
 
     let playerDetailRows = document.getElementsByTagName('tbody')[0].children;
 
-    let playerRank =[];
-    
-    for(let player of playerDetailRows) {
+    let playerRank = [];
+
+    for (let player of playerDetailRows) {
         let add = player.children[0].textContent;
         playerRank.push(add);
     }
