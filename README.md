@@ -224,3 +224,30 @@ The site was developed in gitpod as follows:
 * The live site can be accessed <a href="https://fenton1000.github.io/mf-portfolio-two-match-teams/" target="_blank">here</a>
 
 ## 10. credits
+
+* Code Institute for the Gitpod template provided at https://github.com/Code-Institute-Org/gitpod-full-template allowing easy set up of a repository and workspace as well as initial project html template.
+
+* Code Institute Love Maths example project for general guidance as to mimimun requirements and overview of approach and industry conventions. In particular for guidance on use of Event Listeners, .focus() method, keydown listener and event 'enter', alerts and emptying input fields.
+
+* Google Fonts for imported text font.
+
+* www.fontpair.co for guidance on font options.
+
+* w3schools - www.w3schools.com for information on various javascript methods including event listeners and methods such as event.target and adding and removing class attributes.
+
+* Code Institute Rock Paper Scissors Project and README example for minimun requirements.
+
+* https://ui.dev/amiresponsive for the screen size images in section 8.4 of this README.
+
+* MDN web docs developer.mozilla.org for general guidance on javescript rules and methods and in particular the use of 
+ .removeEventListener.
+
+* javascript.tutorial.net for guidance on the process of returning nested arrays from a function.
+
+* Free Code Camp freecodecamp.org, "How to Clone an Array in Javascript" by Yazeed Bzadough for information on passing an array to a new variable.
+
+* Fellow students in the KCETB-Code Institute cohort for the feedback, advice and constant discussion of all things code.
+
+* Ms. Irene Neville, Code Institute cohort facilitator, for the provision of or signposting towards all key pieces of information needed to ensure the successful completion of the project to the required standards.
+
+* Mr. Rohit Sharma (Mentor) for guidance on overall project approach, industry standards and README requirements. Also for specific signposting towards .trim() method and js docs standards.
