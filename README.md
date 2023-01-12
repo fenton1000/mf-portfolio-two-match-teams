@@ -102,9 +102,10 @@ There are a number of features that could be added in time. These generally rela
 
 2. The system could award additional points to players on a winning team if they hold the oposition scoreless. This would award defensive effort.
 
-3. The system could also track the number of wins, draws and loses for each player and add or subtract points accordingly.
+3. The system could also track the number of wins, draws and loses for each player, provide this information to the user, and add or subtract points accordingly.
 
-In deciding to provide the product initially without any of these features the key consideration is the user the application is aimed at. The product is aimed at the recreational player and the users use of such an application would be for fun. They do not want or expect a detailed analysis.
+In deciding to provide the product initially without any of these features the key consideration is the user the application is aimed at. The product is aimed at the recreational player using the application for fun. They do not expect a detailed analysis or complex system of team selection. Therefore while the additional features outlined above would be interesting and add value they are not expected and therefore the product can and should be deployed in its curent form now.
+
 ## 5. Typography and color scheme
 ## 6. wireframes
 
