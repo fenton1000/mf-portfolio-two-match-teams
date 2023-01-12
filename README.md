@@ -24,7 +24,7 @@ Please note that the features section contains relevant extracts from the projec
 <img src="documents/pp2-wireframe-mobile-header.png"
 alt="wireframe of header on mobile"></details>
 
-<details><summary>Fig. 3.1.2 MDesktop Header</summary>
+<details><summary>Fig. 3.1.2 Desktop Header</summary>
 <img src="documents/pp2-wireframe-desktop-header.png"
 alt="wireframe of header on desktop"></details>
 
@@ -34,42 +34,35 @@ alt="wireframe of header on desktop"></details>
 
 * Prevents the same name being submitted twice or blank name entries being submitted.
 
-* In both the mobile and desktop applications this feature has a promiment position at the top of the screen. In the desktop version this is in the central column.
+* In both the mobile and desktop applications this feature has a promiment position at the top of the screen.
 
-#### Fig. 3.2.1 Mobile Add Players
-![wireframe of add player section on mobile](documents/pp2-wireframe-mobile-player-names.png "Mobile Add Players")
+<details><summary>Fig. 3.2.1 Mobile Add Players</summary>
+<img src="documents/pp2-wireframe-mobile-player-names.png"
+alt="wireframe of add player section on mobile"></details>
 
-#### Fig. 3.2.2 Desktop Add Players
-![wireframe of add player section on desktop](documents/pp2-wireframe-desktop-player-names.png "Desktop Add Players")
+<details><summary>Fig. 3.2.2 Desktop Add Players</summary>
+<img src="documents/pp2-wireframe-desktop-player-names.png"
+alt="wireframe of add player section on desktop"></details>
 
 ### 3.3 Player List and Player Delete
 
 * As players are added via the Add Player function the player names appear listed on screen in the player list section.
 
-* Player List is located towards the bottom of screen on mobile devices. Dependant on device size and number of players it may/will move down off screen and require scrolling to be reached after team creation - see below. However it was considered that once Team A and Team B are selected, this becomes the key priority information in limited screen space. Furthermore having seen the list being created during the name entry process, the user should naturally generate an awarness of its existence and know to scroll if necessary.
+* The "Delete Player!" button is located just below the player list. This allows the removal of a player from the list at any point.
 
-* On mobile devices the "Delete Player!" button is located just below the player list. This allows the removal of a player from the list at any point.
-
-* On desktop, given the ample space available, the player list is located in the left-hand column.
-
-* On desktop the "Delete Player!" button is located in the cental column at the bottom. Therefore it is removed somewhat from the player list but this was considered a more intuitive location given that all controls are located in the central column on desktop.
-
-#### Fig. 3.3.1 Mobile Player List and Player Delete
-![wireframe of player list and player delete section on mobile](documents/pp2-wireframe-mobile-playerlist-and-delete.png "Mobile Player List and Player Delete")
-
-#### Fig. 3.3.2 Desktop Player List
-![wireframe of player list section on desktop](documents/pp2-wireframe-desktop-playerlist.png "Desktop Player List")
+<details><summary>Fig. 3.3.1 Player List and Player Delete</summary>
+<img src="documents/pp2-wireframe-mobile-playerlist-and-delete.png"
+alt="wireframe of player list and player delete section"></details>
 
 ### 3.4 Create Teams
 
 * The create teams section has a button "Create Teams!". When clicked the application divides the full player list into 2 teams, A & B.
 
-* In the mobile version of the application the two team lists are displayed to screen directly above the "Create Teams!" button.
+* The two team lists are displayed to screen directly above the "Create Teams!" button.
 
-* In the destop version the two teams are displayed at the top of the right-hand side of the screen.
-
-#### Fig. 3.4.1 Mobile Create Teams
-![wireframe of create teams section on mobile](documents/pp2-wireframe-mobile-create-teams.png "Mobile Create Teams")
+<details><summary>Fig. 3.4.1 Create Teams</summary>
+<img src="documents/pp2-wireframe-mobile-create-teams.png"
+alt="wireframe of create teams section"></details>
 
 ### 3.5 Enter Match Result
 
@@ -77,28 +70,29 @@ alt="wireframe of header on desktop"></details>
 
 * Has a submit button labelled "Add Match Result!"
 
-* This area is almost identical in the mobile and desktop versions.
-
-#### Fig. 3.5.1 Mobile Enter Match Result
-![wireframe of enter match result section on mobile](documents/pp2-wireframe-mobile-result.png "Mobile Enter Match Result")
+<details><summary>Fig. 3.5.1 Enter Match Result</summary>
+<img src="documents/pp2-wireframe-mobile-result.png"
+alt="wireframe of enter match result section"></details>
 
 ### 3.6 How it Works
 
 * Provides bullet point list describing how to use the application.
 
-* Is located in the bottom right corner on desktop.
+* Is located at the bottom of the page.
 
-* Is located at the bottom on the mobile application and can be scrolled to or reached via the footer link.
+* On the mobile application it will have to be scrolled to or reached via the footer link.
 
-#### Fig. 3.6.1 How it Works
-![wireframe of how it works section](documents/pp2-wireframe-desktop-how-it-works.png "How it Works Section")
+<details><summary>Fig. 3.6.1 How it Works</summary>
+<img src="documents/pp2-wireframe-desktop-how-it-works.png"
+alt="wireframe of how it works section"></details>
 
 ### 3.7 Mobile Footer
 
 * On the mobile version a thin horizontal fixed footer is included containing the application name and a link to the how it works section as the how it works may not be visible on smaller devices even at the beginning before adding names and teams.
 
-#### Fig. 3.7.1 Mobile Footer
-![wireframe of mobile footer](documents/pp2-wireframe-mobile-footer.png "Mobile Footer")
+<details><summary>Fig. 3.7.1 Mobile Footer</summary>
+<img src="documents/pp2-wireframe-mobile-footer.png"
+alt="wireframe of mobile footer"></details>
 
 ## 4. future features
 
