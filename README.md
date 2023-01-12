@@ -165,6 +165,27 @@ The following technologies were used in developing and deploying the website:
 
 * Microsoft Edge and Mozilla Firefox were used when testing the site compatibility with other web browsers.
 
+## 8. Testing
+
+   ### 8.1 Code Validation
+
+The code successfully passed html validation:
+
+![html validation screenshot](documents/html-validation.png "html validation screenshot")
+
+The code successfully passed css validation:
+
+![css validation screenshot](documents/css-validation.png "css validation screenshot")
+
+The code successfully passed javascript (jshint) validation:
+
+![javascript validation screenshot](documents/jshint-validation.png "javascript validation screenshot")
+
+The configuration used in jshint was as follows:
+
+![javascript configuration screenshot](documents/jshint-config.png "javascript configuration screenshot")
+
+
 ## 8. testing
    8.1 code validation
    8.2 test cases (user story based with screenshots)
