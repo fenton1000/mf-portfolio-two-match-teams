@@ -185,6 +185,15 @@ The configuration used in jshint was as follows:
 
 ![javascript configuration screenshot](documents/jshint-config.png "javascript configuration screenshot")
 
+### 8.2 Test Cases
+
+ #### 8.2.1 User Story 1
+
+As a visiting user I want to be able to add players to a player list.
+
+This requirement is met by the provision of an input field for the entry of a player name by the user and an Add Player button. The user gets immediate feedback on screen that the name entry has worked by the name appear on screen.
+
+
 
 ## 8. testing
    8.1 code validation
