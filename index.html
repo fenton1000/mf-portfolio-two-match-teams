@@ -21,40 +21,41 @@
         <h2>Picks Teams so You Don't Have to!</h2>
     </header>
 
-    <section id="add-player">
-        <h3>Enter Player Names Here!</h3>
-        <label for="enter-name">Name:</label>
-        <input type="text" id="enter-name" placeholder="Name Here">
-        <button type="button" id="submit-player-name">Add Player!</button>
-    </section>
+    <main>
+        <section id="add-player">
+            <h3>Enter Player Names Here!</h3>
+            <label for="enter-name">Name:</label>
+            <input type="text" id="enter-name" placeholder="Name Here">
+            <button type="button" id="submit-player-name">Add Player!</button>
+            <p id="warning-message" class="warning">Select to delete Cancel to exit</p>
+            <div id="player-list"></div>
+            <button type="button" id="delete-player">Delete Player!</button>
+            <button type="button" id="cancel" class="cancel-button">Cancel</button>
+        </section>
 
-    <section>
-        <div id="teams">
-            <h4 id="team-a-heading">Team A</h4>
-            <h4 id="team-b-heading">Team B</h4>
-            <div id="team-a"></div>
-            <div id="team-b"></div>
+        <section>
+            <h3>Teams</h3>
+
+            <div id="teams">
+                <div id="team-a"></div>
+                <div id="team-b"></div>
+            </div>
+
             <p id="ranking-message" class="ranking">Team Selection based on Player Ranking!</p>
-            <p id="shuffle-message" class="shuffle">Player Rankings unchanged! Create Teams! shuffled last teams! Enter match results to update ranking!</p>
-        </div>
-        <button type="button" id="create-teams">Create Teams!</button>
-    </section>
+            <p id="shuffle-message" class="shuffle">Player Rankings Unchanged! Shuffled last teams! Enter match results
+                to update ranking!</p>
+            <button type="button" id="create-teams">Create Teams!</button>
+        </section>
 
-    <section>
-        <h3>Enter Match Results Here!</h3>
-        <label for="team-a-score">Team A:</label>
-        <input type="number" id="team-a-score">
-        <label for="team-b-score">Team B:</label>
-        <input type="number" id="team-b-score">
-        <button type="button" id="submit-match-result">Add Match Result!</button>
-    </section>
-
-    <section>
-        <p id="warning-message" class="warning">!!Clicking on a player name will remove them permanently from the list!!</p>
-        <div id="player-list"></div>
-        <button type="button" id="delete-player">Delete Player!</button>
-        <button type="button" id="cancel" class="cancel-button">Cancel</button>
-    </section>
+        <section>
+            <h3>Enter Match Results Here!</h3>
+            <label for="team-a-score">Team A:</label>
+            <input type="number" id="team-a-score">
+            <label for="team-b-score">Team B:</label>
+            <input type="number" id="team-b-score">
+            <button type="button" id="submit-match-result">Add Match Result!</button>
+        </section>
+    </main>
 
     <section id='how-it-works'>
         <h4>How it Works:</h4>

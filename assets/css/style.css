@@ -42,9 +42,15 @@ h3 {
     margin: 5px;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 350px;
+}
+
 section {
     text-align: center;
-    max-width: 350px;
 }
 
 input {
@@ -59,12 +65,16 @@ input {
 button {
     padding: 12px 7px;
     border-radius: 10px;
-    margin: 5px 5px 30px 5px;
+    margin: 3px;
     font-family: inherit;
     font-weight: inherit;
     font-size: 15px;
     background-color: #9dce76;
     border: 1px solid black;
+}
+
+table {
+    width: 90%;
 }
 
 ul {
@@ -109,8 +119,8 @@ footer>a:hover {
 
 .warning {
     color: red;
-    visibility: hidden;
-    margin-top: 5px;
+    display: none;
+    margin: 2px;
 }
 
 .cancel-button {
@@ -126,24 +136,26 @@ input[type=number] {
     margin-top: 100px;
 }
 
-#team-a-heading {
-    float: left;
-    width: 50%;
-}
-
-#team-b-heading {
-    float: right;
-    width: 50%;
+#teams {
+    width: 100%;
 }
 
 #team-a {
     float: left;
-    width: 50%;
+    margin: 3%;
 }
 
 #team-b {
     float: right;
-    width: 50%;
+    margin: 3%;
+}
+
+#ranking-message {
+    clear: both;
+}
+
+#shuffle-message {
+    clear: both;
 }
 
 #how-it-works {
@@ -167,7 +179,7 @@ input[type=number] {
 }
 
 .warning-on {
-    visibility: visible;
+    display: block;
 }
 
 .delete-player {
@@ -185,39 +197,28 @@ input[type=number] {
     display: inline;
 }
 
-/* For Screens 950px wide and up */
-@media screen and (min-width: 950px) {
+/* For Screens 900px wide and up */
+@media screen and (min-width: 900px) {
 
-    .warning {
-        position: fixed;
-        top: 100px;
-        left: 40px;
-        width: 20%;
+    main {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        max-width: none;
+        width: 90%;
+        margin-top: 100px;
     }
 
-    #player-list {
-        position: fixed;
-        top: 200px;
-        left: 60px;
+    section {
+        width: 33%;
     }
 
-    #teams {
-        position: fixed;
-        top: 100px;
-        right: 25px;
-    }
-
-    #team-a-heading {
-        width: 45%;
-    }
-
-    #team-b-heading {
-        width: 45%;
+    #add-player {
+        margin-top: 0;
     }
 
     #how-it-works {
-        position: fixed;
-        bottom: 5px;
-        right: 5px;
+        margin: 40px 5px;
+        width: 90%;
     }
 }

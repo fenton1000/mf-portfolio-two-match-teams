@@ -49,7 +49,6 @@ function printPlayerList() {
     let playerList = document.getElementById('player-list');
 
     playerList.innerHTML = `
-    <h4>Player List</h4>
     <table>
         <thead>
             <tr>
@@ -138,14 +137,14 @@ function createNextTeams() {
     }
 
     let teamAList = document.getElementById('team-a');
-    teamAList.innerHTML = '';
+    teamAList.innerHTML = '<h4>Team A</h4>';
 
     for (let player of teamA) {
         teamAList.innerHTML += `<p>${player}</p>`;
     }
 
     let teamBList = document.getElementById('team-b');
-    teamBList.innerHTML = '';
+    teamBList.innerHTML = '<h4>Team B</h4>';
 
     for (let player of teamB) {
         teamBList.innerHTML += `<p>${player}</p>`;
@@ -221,8 +220,8 @@ function shuffleTeams() {
     let teamASource = document.getElementById('team-a').children;
     let teamA = [];
 
-    for (let player of teamASource) {
-        let add = player.textContent;
+    for (let i = 1; i < teamASource.length; i++) {
+        let add = teamASource[i].textContent;
         teamA.push(add);
     }
 
@@ -230,8 +229,8 @@ function shuffleTeams() {
     let teamBSource = document.getElementById('team-b').children;
     let teamB = [];
 
-    for (let player of teamBSource) {
-        let add = player.textContent;
+    for (let i = 1; i < teamBSource.length; i++) {
+        let add = teamBSource[i].textContent;
         teamB.push(add);
     }
 
