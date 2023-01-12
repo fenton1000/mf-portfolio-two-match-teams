@@ -20,12 +20,13 @@ Please note that the features section contains relevant extracts from the projec
 
 * The header contains the application name "Match Teams" and a sub-heading, "Picks Teams so You Don't have to!" to provide a strong initial indication as to what the application does.
 
-* The title and sub-heading are off-set in the wider desktop version to so as to better fill the space and appear more centred over the middle column content.
+<details><summary>Fig. 3.1.1 Mobile Header</summary>
+<img src="documents/pp2-wireframe-mobile-header.png"
+alt="wireframe of header on mobile"></details>
 
-#### Fig. 3.1.1 Mobile Header
-![wireframe of header on mobile](documents/pp2-wireframe-mobile-header.png "Mobile Header")
-#### Fig3.1.2 Destop Header
-![wireframe of header on desktop](documents/pp2-wireframe-desktop-header.png "Desktop Header")
+<details><summary>Fig. 3.1.2 MDesktop Header</summary>
+<img src="documents/pp2-wireframe-desktop-header.png"
+alt="wireframe of header on desktop"></details>
 
 ### 3.2 Add Players
 
