@@ -138,8 +138,33 @@ In deciding to provide the product initially without any of these features the k
 ![wireframe of screen on mobile after team creation](documents/PP2%20Wireframe%203.png "mobile screen with teams lists")
 ### 6.4 Screen on Desktop Platform
 ![wireframe of screen on desktop](documents/PP2%20Wireframe%204.png "desktop screen")
-=== 1-6 for planning and then write code ===
+
 ## 7. technology
+
+The following technologies were used in developing and deploying the website:
+
+* HTML
+
+* CSS
+
+* Javascript
+
+* The IDE used was GITPOD
+
+* The repository used is GITHUB
+
+* The website is deployed on GITHUB pages.
+
+* Testing was carried out using Chrome Developer Tools including lighthouse for responsiveness and accessibility.
+
+* In addition to using Chrome Developer tools for the primary checks of responsiveness, the application was also looked at on the https://ui.dev/amiresponsive website.
+
+* Balsamiq was used to prepare wireframes.
+
+* Google Chrome was used as the main web browser both for accessing the IDE and the repository as well as to view the website application during development.
+
+* Microsoft Edge and Mozilla Firefox were used when testing the site compatibility with other web browsers.
+
 ## 8. testing
    8.1 code validation
    8.2 test cases (user story based with screenshots)
