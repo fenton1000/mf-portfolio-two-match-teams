@@ -107,6 +107,27 @@ There are a number of features that could be added in time. These generally rela
 In deciding to provide the product initially without any of these features the key consideration is the user the application is aimed at. The product is aimed at the recreational player using the application for fun. They do not expect a detailed analysis or complex system of team selection. Therefore while the additional features outlined above would be interesting and add value they are not expected and therefore the product can and should be deployed in its curent form now.
 
 ## 5. Typography and color scheme
+
+### 5.1 Typography
+
+* The chosen font is Nunito Sans with a font-weight of 500. It is considered that it conveys the simple, easy to read approach required.
+
+* The font was chosen from Google Fonts with reference to www.fontpair.co
+
+* The fall-back font is sans-serif.
+
+### 5.2 Color Scheme
+
+* The font-color is #131817 which is close to black and was chosen to ensure the text is easily read on lighter backgrounds.
+
+* All other colors have been chosen to ensure clear contrast with the font-color. Varying shades of green were considered appropriate to a sports related application.
+
+* The background colour is #9dce76. The key consideration is that it does not distract from the site content.
+
+* The background color for the header and footer is #9dce76 and was chosen to provide a degree of contrast from the main body of the page without being radically different. The subtle difference is important particularly for the header which is fixed and would otherwise blend into the background at certain scroll locations.
+
+* The background color for the link hover position is the same as the main background. This provides adequate contrast with the the pre-hover position.
+
 ## 6. wireframes
 
 ### 6.1 Initial Screen on Mobile Platform
