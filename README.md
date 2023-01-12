@@ -170,7 +170,57 @@ The following technologies were used in developing and deploying the website:
    8.2 test cases (user story based with screenshots)
    8.3 fixed bugs
    8.4 supported screens and browsers
+
 ## 9. Deployment
-   9.1 via gitpod
-   9.2 via github pages
+
+   ### 9.1 via gitpod
+
+The site was developed in gitpod as follows:
+
+1. From the github repository created for the project (see below) the Gitpod button installed as a chrome browser extension was clicked. A Gitpod workspace was created.
+
+2. Within the workspace explorer the required html file index.html was created.
+
+3. Within the workspace explorer an assets folder was created.
+
+4. Within the assets folder a css folder and a js folder were created.
+
+5. Within the css folder a style.css file was created for the project css.
+
+6. Within the js folder a script.js file was created for the project javascript.
+
+7. Basic template boilerplate html was introduced to index.html and links created to the style.css and script.js files.
+
+8. Coding of the website proceeded using the html, css and javascript coding languages.
+
+9. To view the ongoing development in a seperate browser tab, the command python3-m http.server was entered in the IDE terminal.
+
+10. At regular appropriate intervals the latest version of the code was saved via the git add and git commit commands. Appropriate commit messages were added to control the revisions.
+
+11. The git push command was used to push all committed code and documentation to the repository for secure storing.
+
+   ### 9.2 via github pages
+
+1. The Code Institute project template was accessed on github at https://github.com/Code-Institute-Org/gitpod-full-template and the Use this Template button clicked to create a project specific repository.
+
+2. All files and documents pushed from Gitpod appear in the repository.
+
+3. The website is deployed to github pages as follows:
+
+* From the project repository click on the settings button.
+
+* Then click on Pages in the options listed to the left.
+
+* Chose to deploy from a branch and select the main branch.
+
+* Deploy the page.
+
+* The web page is deployed to github pages and a link to the page is provided. This may take a few minutes.
+
+* Click on the link to access the deployed website. The link can also be copied to anyone needing to access the site as can the repository address.
+
+* Once deployed any further changes pushed from Gitpod will be reflected in the website following a hard refresh of the pages. It may take a few minutes for changes to transfer so it may be necessary to complete a hard refresh after a few minutes if changes do not appear reflected in the latest pages at first.
+
+* The live site can be accessed <a href="https://fenton1000.github.io/mf-portfolio-two-match-teams/" target="_blank">here</a>
+
 ## 10. credits
