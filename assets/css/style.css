@@ -226,3 +226,21 @@ input[type=number] {
         max-width: 90%;
     }
 }
+
+/* For Screens 450px wide and down */
+@media screen and (max-width: 450px) {
+
+    h1 {
+        font-size: 30px;
+        margin-left: 10px;
+    }
+    
+    h2 {
+        font-size: 12px;
+    }
+
+    a {
+        max-width: 40px;
+        font-size: 12px;
+    }
+}
