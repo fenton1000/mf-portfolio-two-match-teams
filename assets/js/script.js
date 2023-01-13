@@ -487,7 +487,7 @@ function recordScreenRank() {
  * Function enterKey is called by the keydown event listener connected to the enter-name input element.
  * Calls the addPlayer function when enter key pressed.
  */
-function enterKey(event) {
+function onEnterKeyPressed(event) {
     if (event.key === 'Enter') {
         addPlayer();
     }
@@ -501,7 +501,7 @@ document.addEventListener('DOMContentLoaded', function () {
     submitPlayerName.addEventListener('click', addPlayer);
 
     let enterName = document.getElementById('enter-name');
-    enterName.addEventListener('keydown', enterKey);
+    enterName.addEventListener('keydown', onEnterKeyPressed);
 
     let createTeams = document.getElementById('create-teams');
     createTeams.addEventListener('click', createNextTeams);
