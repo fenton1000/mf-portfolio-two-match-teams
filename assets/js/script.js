@@ -151,19 +151,9 @@ function createNextTeams() {
         document.getElementById('shuffle-message').classList.add('shuffle-on');
     }
 
-    let teamAList = document.getElementById('team-a');
-    teamAList.innerHTML = '<h4>Team A</h4>';
+    let teams = [teamA, teamB];
 
-    for (let player of teamA) {
-        teamAList.innerHTML += `<p>${player}</p>`;
-    }
-
-    let teamBList = document.getElementById('team-b');
-    teamBList.innerHTML = '<h4>Team B</h4>';
-
-    for (let player of teamB) {
-        teamBList.innerHTML += `<p>${player}</p>`;
-    }
+    printTeams(teams);
 }
 
 /**
@@ -223,6 +213,29 @@ function split(array) {
 
     let evenOdd = [even, odd];
     return evenOdd;
+}
+
+/**
+ * printTeams function takes an array containing the two team arrays and prints them to screen.
+ * @param {array} teams 
+ */
+function printTeams(teams) {
+
+    let [teamA, teamB] = teams;
+
+    let teamAList = document.getElementById('team-a');
+    teamAList.innerHTML = '<h4>Team A</h4>';
+
+    for (let player of teamA) {
+        teamAList.innerHTML += `<p>${player}</p>`;
+    }
+
+    let teamBList = document.getElementById('team-b');
+    teamBList.innerHTML = '<h4>Team B</h4>';
+
+    for (let player of teamB) {
+        teamBList.innerHTML += `<p>${player}</p>`;
+    }
 }
 
 /**
