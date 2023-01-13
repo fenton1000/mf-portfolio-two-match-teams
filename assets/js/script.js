@@ -244,23 +244,7 @@ function printTeams(teams) {
  */
 function shuffleTeams() {
 
-    // gathers teamA from index.html
-    let teamASource = document.getElementById('team-a').children;
-    let teamA = [];
-
-    for (let i = 1; i < teamASource.length; i++) {
-        let add = teamASource[i].textContent;
-        teamA.push(add);
-    }
-
-    // gathers teamB from index.html
-    let teamBSource = document.getElementById('team-b').children;
-    let teamB = [];
-
-    for (let i = 1; i < teamBSource.length; i++) {
-        let add = teamBSource[i].textContent;
-        teamB.push(add);
-    }
+    let [teamA, teamB] = gatherTeamsAAndB();
 
     let removeA = teamA[0];
     teamA.splice(0, 1);
