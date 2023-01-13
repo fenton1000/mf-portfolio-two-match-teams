@@ -95,7 +95,6 @@ function createNextTeams() {
         return;
     }
 
-    //First checks if the players array order has changed.
     let currentPlayerArray = [];
 
     for (let player of players) {
@@ -104,10 +103,40 @@ function createNextTeams() {
         currentPlayerArray.push(add);
     }
 
+    let [teamAcheck, teamBcheck] = gatherTeamsAAndB();
+
+    let lengthA = teamAcheck.length;
+    let lengthB = teamBcheck.length;
+
+    let checkArray = teamAcheck.concat(teamBcheck);
+
+    let checkDiff;
+
+    if (lengthA > lengthB) {
+        checkDiff = lengthA - lengthB;
+    } else {
+        checkDiff = lengthB - lengthA;
+    }
+    let checkIndex = 0
+    for (let player of currentPlayerArray) {
+        for (i = 0; i < checkArray.length; i++) {
+            if (player === checkArray[i]) {
+                checkIndex = checkIndex + 1;
+            }
+        }
+    }
+
+
     let arrayChanged = true;
     let indexCount = 0;
 
-    if (currentPlayerArray.length !== mostRecentOverwritten.length) {
+    if (currentPlayerArray.length !== checkArray.length) {
+        arrayChanged = true;
+    } else if (checkDiff > 1) {
+        arrayChanged = true;
+    } else if (checkIndex !== currentPlayerArray.length) {
+        arrayChanged = true;
+    } else if (currentPlayerArray.length !== mostRecentOverwritten.length) {
         arrayChanged = true;
     } else {
 
