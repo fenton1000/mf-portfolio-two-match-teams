@@ -402,8 +402,40 @@ function deleteSelectedPlayer(event) {
 
     printPlayerList();
 
+    deletePlayerFromTeam(player);
+
     document.getElementById('warning-message').classList.remove('warning-on');
     document.getElementById('cancel').classList.remove('cancel-button-on');
+}
+
+/**
+ * deletePlayerFromTeam function takes a player name and deletes
+ * this player from the appropriate team selection.
+ * @param {string} player 
+ */
+function deletePlayerFromTeam(player) {
+
+    let [teamA, teamB] = gatherTeamsAAndB();
+
+    let index;
+
+    for (let i = 0; i < teamA.length; i++) {
+        if (player === teamA[i]) {
+            index = i;
+            teamA.splice(index, 1);
+        } 
+    }
+
+    for (let i = 0; i < teamB.length; i++) {
+        if (player === teamB[i]) {
+            index = i;
+            teamB.splice(index, 1);
+        } 
+    }
+
+    let teams = [teamA, teamB];
+
+    printTeams(teams);
 }
 
 /**
