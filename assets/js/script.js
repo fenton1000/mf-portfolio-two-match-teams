@@ -82,6 +82,19 @@ function printPlayerList() {
  */
 function createNextTeams() {
 
+    if (players.length < 2) {
+
+        let teamAList = document.getElementById('team-a');
+        teamAList.innerHTML = '';
+        let teamBList = document.getElementById('team-b');
+        teamBList.innerHTML = '';
+
+        document.getElementById('ranking-message').classList.remove('ranking-on');
+        document.getElementById('shuffle-message').classList.remove('shuffle-on');
+        document.getElementById('less-than-two-message').classList.add('less-than-two-on');
+        return;
+    }
+
     //First checks if the players array order has changed.
     let currentPlayerArray = [];
 
@@ -125,6 +138,7 @@ function createNextTeams() {
         teamB = [...B];
 
         document.getElementById('shuffle-message').classList.remove('shuffle-on');
+        document.getElementById('less-than-two-message').classList.remove('less-than-two-on');
         document.getElementById('ranking-message').classList.add('ranking-on');
     } else {
         let [A, B] = shuffleTeams();
@@ -133,6 +147,7 @@ function createNextTeams() {
         teamB = [...B];
 
         document.getElementById('ranking-message').classList.remove('ranking-on');
+        document.getElementById('less-than-two-message').classList.remove('less-than-two-on');
         document.getElementById('shuffle-message').classList.add('shuffle-on');
     }
 
