@@ -217,7 +217,7 @@ function split(array) {
 
 /**
  * printTeams function takes an array containing the two team arrays and prints them to screen.
- * @param {array} teams 
+ * @param {!Array} teams 
  */
 function printTeams(teams) {
 
@@ -292,13 +292,7 @@ function updatePlayerPoints() {
 
     mostRecentOverwritten = recordScreenRank();
 
-    /* gathers teamA from index.html */
-    let teamASource = document.getElementById('team-a').children;
-    let teamA = extractTextContent(teamASource);
-
-    /* gathers teamB from index.html */
-    let teamBSource = document.getElementById('team-b').children;
-    let teamB = extractTextContent(teamBSource);
+    let [teamA, teamB] = gatherTeamsAAndB();
 
     let pointsAwarded;
     if (teamBScore > teamAScore) {
@@ -322,6 +316,27 @@ function updatePlayerPoints() {
 
     document.getElementById('team-a-score').value = '';
     document.getElementById('team-b-score').value = '';
+}
+
+/**
+ * function gatherTeamsAAndB creates and returns two arrays one each for teamA and teamB
+ * based on the current teams displayed on screen.
+ * @returns {!Array} teams
+ */
+function gatherTeamsAAndB() {
+
+ let teamASource = document.getElementById('team-a').children;
+ let teamA = extractTextContent(teamASource);
+ teamA.splice(0, 1);
+
+ let teamBSource = document.getElementById('team-b').children;
+ let teamB = extractTextContent(teamBSource);
+ teamB.splice(0, 1);
+
+ let teams = [teamA, teamB];
+
+ return teams;
+
 }
 
 /**
