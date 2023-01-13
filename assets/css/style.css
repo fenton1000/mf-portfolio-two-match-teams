@@ -123,6 +123,10 @@ li {
     display: none;
 }
 
+.results-added {
+    display: none;
+}
+
 .warning {
     color: red;
     display: none;
@@ -185,6 +189,10 @@ input[type=number] {
 }
 
 .shuffle-on {
+    display: block;
+}
+
+.results-added-on {
     display: block;
 }
 

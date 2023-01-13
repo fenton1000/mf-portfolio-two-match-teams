@@ -298,8 +298,19 @@ function updatePlayerPoints() {
 
     printPlayerList();
 
+    document.getElementById('results-message').classList.add('results-added-on');
+    setTimeout(turnResultsMessageOff, 2000);
+
     document.getElementById('team-a-score').value = '';
     document.getElementById('team-b-score').value = '';
+}
+
+/**
+ * turnResultsMessageOff function is called by a setTimeout in the updatePlayerPoints function.
+ */
+function turnResultsMessageOff () {
+    
+    document.getElementById('results-message').classList.remove('results-added-on');
 }
 
 /**
