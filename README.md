@@ -357,12 +357,17 @@ The site has been tested and was found to work on the following internet browser
 
 * Firefox
 
+### 8.5 Accessibility
 
-## 8. testing
-   8.1 code validation
-   8.2 test cases (user story based with screenshots)
-   8.3 fixed bugs
-   8.4 supported screens and browsers
+Lighthouse in Google Chrome Developer Tools was used to assess accessibility and it was found to be acceptable.
+
+#### Fig.8.5.1 Lighthouse for Desktop
+
+![lighthouse results showing 100 in all categories](documents/lighthouse-desktop.png "lighthouse desktop testing screenshot")
+
+<details><summary>Fig. 8.5.2 Lighthouse for Mobile</summary>
+<img src="documents/lighthouse-mobile.png"
+alt="lighthouse results showing hight results in all categories."></details>
 
 ## 9. Deployment
 
