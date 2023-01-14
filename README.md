@@ -131,13 +131,13 @@ In deciding to provide the product initially without any of these features the k
 ## 6. wireframes
 
 ### 6.1 Initial Screen on Mobile Platform
-![wireframe of initial screen on mobile](documents/PP2%20Wireframe%201.png "Initial Mobile Screen")
+![wireframe of initial screen on mobile](documents/wireframe-one.png "Initial Mobile Screen")
 ### 6.2 Screen on Mobile after Player List Entry
-![wireframe of screen on mobile after player list entry](documents/PP2%20Wireframe%202.png "mobile screen with player list")
+![wireframe of screen on mobile after player list entry](documents/wireframe-two.png "mobile screen with player list")
 ### 6.3 Screen on Mobile after Team Creation
-![wireframe of screen on mobile after team creation](documents/PP2%20Wireframe%203.png "mobile screen with teams lists")
+![wireframe of screen on mobile after team creation](documents/wireframe-three.png "mobile screen with teams lists")
 ### 6.4 Screen on Desktop Platform
-![wireframe of screen on desktop](documents/PP2%20Wireframe%204.png "desktop screen")
+![wireframe of screen on desktop](documents/wireframe-four.png "desktop screen")
 
 ## 7. technology
 
