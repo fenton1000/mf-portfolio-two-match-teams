@@ -281,6 +281,48 @@ Clicking the cancel button exits the delete function|Yes
 <img src="documents/delete-player.png"
 alt="screenshot of delete player section"></details>
 
+### 8.3 Fixed Bugs
+
+1. The create teams function initially added player names on to the end of the previous teams on screen rather than displaying new teams.
+
+Solution: Changed the operator adding the first line of text on each recreation from += to = so that the first text addition on each cycle overwrites the previous information, with the remainder of the data on each cycle continuing to be added with the += operator.
+
+2. Initially the printPlayerList function failed to print the list to screen in the desired table format.
+
+Solution: The solution was to ensure the correct javascript code sequencing with the table being created on a particular line and then targetting the just created tbody html element on the following lines.
+
+3. Initially the shuffle function to create alternative teams if the ranking does not change could only toggle back and forth between two teams options if the ranking remained unchanged for a number of matches.
+
+Solution: The initial system relied only on a comparison of the current teams with the team the ranking would provide. If they were the same the team would shuffle. After one toggle however, the latest team would appear different to the ranking team and so the ranking based team would be chosen again. In the event of no change to the ranking it reverts to the second last team set. The current system includes a seperate ranking array to record the last ranking before it is overwritten by any of the add player, delete player or add points functions. This allows comparison of the current ranking and the one just previous before next teams creation and the shuffle team option is always called if the ranking is unchanged. There are further checks required also to address some particular corner cases that were not considered during design and developement and emerged as bugs during testing. These are addressed seperately below.
+
+4. Initially some of the buttons jumped position in an undesireable manner at certain screen widths.
+
+Solution: This was addressed with media queries focusing mainly on element widths and max-widths.
+
+5. When a user attempted to create teams with one or no players available in the player list the application delivered poor user interface output. See screenshots:
+
+<details><summary>Fig. 8.3.1 Poor UI with no players but atempted team creation</summary>
+<img src="documents/poor-ui-none.png"
+alt="screenshot of poor ui feedback showing two undefined statements"></details>
+
+<details><summary>Fig. 8.3.2 Poor UI with one player but atempted team creation</summary>
+<img src="documents/poor-ui-one.png"
+alt="screenshot of poor ui feedback showing one undefined statement"></details>
+
+Solution: An if statement was added to the primary team creation function so that if the number of players is less than two the function gets a return instruction and a message is displayed to the user.
+
+6. When a player is deleted, initially the application removed them from the players list immediately but not from the displayed teams. This was considered an unsatisfactory and misleading User Experience even if proceeding to create new teams did resolve the issue.
+
+Solution: A new function was created specifically to address this issue and remove deleted players from teams and update the displayed team lists. This function is called as part of the deletion process. This was done to create a nice UX even though it is quite likely in reality that following a player leaving the Create Teams! button will be used immediately after. Consideration was given to simply calling the existing shuffle function but again from a UX viewpoint the user may not expect a full team shuffle just by deleting. Furthermore if they had yet to input a match result and carried out deletion first the opportunity to enter a result would be lost, probably unexpectedly from a user viewpoint.
+
+7. In certain scenarios it was found that the application awarded players on losing teams negative points rather than giving them as positive points to the winning team players.
+
+Solution: The parseInt() method has been applied in the javascript extracting the score data from the input fields.
+
+8. Close to final deployment it was discovered that in a scenario where a user first added or deleted a player and then proceeded to enter a match score where the score difference was too low to affect the rankings the subsequent attempt to create teams would create anomalies. Team creation would ignore the added players and in the case of deletion would for example in a scenario where say there had been two teams of four with two players deleted from one team the shuffle function would be deployed and simply maintain the 4 to 2 split now existing.
+
+Solution: When the user adds a result as above the system first creates a copy of the existing player ranking for future comparison before adding the latest points. However if the user has added or deleted players prior to adding the score (rather than the other way round) these changes are already reflected in the primary array. Therefore the copy created just prior to adding the scores already includes the player updates. Now if the new score doesn't change the ranking then the next comparison prior to creating teams will show the ranking as unchanged and therfore call the shuffle function. This shuffles the last teams and was leading to the scenarios described above. The solution provided was to add further screening via if statements to the createNewTeams function as follows. The total number of players left on the last teams is compared to the latest player array and if this is different the array has changed. Also the names left are compared with the latest array to cover the scenario where an equal number of players could have been added and deleted. Finally if the difference in length of the remaining teams is greater than 1 then clearly deletions have occurred. In these scenarios the function to create teams from the ranking is called. If several deletions but no additions have occured across both teams but the final remaining teams are the same length or different by only one player the shuffle function is used. However given that the deletions will have changed the teams anyway this is considered acceptable.
+
 ## 8. testing
    8.1 code validation
    8.2 test cases (user story based with screenshots)
