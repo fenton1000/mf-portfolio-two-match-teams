@@ -20,12 +20,16 @@ Please note that the features section contains relevant extracts from the projec
 
 * The header contains the application name "Match Teams" and a sub-heading, "Picks Teams so You Don't have to!" to provide a strong initial indication as to what the application does.
 
+* The header contains a link to the How it Works section as this may well be off screen on smaller devices from the beginning and may get pushed down off screen as players are added and teams are created. It was not considered ncessary to add links to other sections as they are close to the top or within a short scrolling distance.
+
+* A home link is also provided.
+
 <details><summary>Fig. 3.1.1 Mobile Header</summary>
-<img src="documents/pp2-wireframe-mobile-header.png"
+<img src="documents/mobile-header.png"
 alt="wireframe of header on mobile"></details>
 
 <details><summary>Fig. 3.1.2 Desktop Header</summary>
-<img src="documents/pp2-wireframe-desktop-header.png"
+<img src="documents/desktop-header.png"
 alt="wireframe of header on desktop"></details>
 
 ### 3.2 Add Players
@@ -60,6 +64,14 @@ alt="wireframe of player list and player delete section"></details>
 
 * The two team lists are displayed to screen directly above the "Create Teams!" button.
 
+* If match results have been added, the players on winning teams will have received points equivalent to the winning margin. The players will be ranked on this basis and the player order and points to date for each player will be shown in the player list.
+
+* When the Create Teams! button is clicked the player list will be divided into two teams based on rank order. This is the essential element of this application. This is the means by which the application endeavours to create more evenly matched teams over time.
+
+* If, as a base example, there were four players on the list, A, B, C and D in that order, the application would divide them putting A and D together on one team and B and C together on the other. A simple split of every second player, putting A and C together would always favour team A assuming the ranking reasonably reflects the players abilities. This AD BC approach is repeated as the application works down the list and the javscript code has been designed to split and sort the player array twice on every creation event to achieve this.
+
+*If it happens that the ranking has not changed before a particular team creation event the application is designed to shuffle the previous teams in this case as otherwise the application would create the same teams again. It is assumed that a user clicking create teams wants new teams every time.
+
 <details><summary>Fig. 3.4.1 Create Teams</summary>
 <img src="documents/pp2-wireframe-mobile-create-teams.png"
 alt="wireframe of create teams section"></details>
@@ -80,19 +92,9 @@ alt="wireframe of enter match result section"></details>
 
 * Is located at the bottom of the page.
 
-* On the mobile application it will have to be scrolled to or reached via the footer link.
-
 <details><summary>Fig. 3.6.1 How it Works</summary>
 <img src="documents/pp2-wireframe-desktop-how-it-works.png"
 alt="wireframe of how it works section"></details>
-
-### 3.7 Mobile Footer
-
-* On the mobile version a thin horizontal fixed footer is included containing the application name and a link to the how it works section as the how it works may not be visible on smaller devices even at the beginning before adding names and teams.
-
-<details><summary>Fig. 3.7.1 Mobile Footer</summary>
-<img src="documents/pp2-wireframe-mobile-footer.png"
-alt="wireframe of mobile footer"></details>
 
 ## 4. future features
 
