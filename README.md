@@ -323,6 +323,41 @@ Solution: The parseInt() method has been applied in the javascript extracting th
 
 Solution: When the user adds a result as above the system first creates a copy of the existing player ranking for future comparison before adding the latest points. However if the user has added or deleted players prior to adding the score (rather than the other way round) these changes are already reflected in the primary array. Therefore the copy created just prior to adding the scores already includes the player updates. Now if the new score doesn't change the ranking then the next comparison prior to creating teams will show the ranking as unchanged and therfore call the shuffle function. This shuffles the last teams and was leading to the scenarios described above. The solution provided was to add further screening via if statements to the createNewTeams function as follows. The total number of players left on the last teams is compared to the latest player array and if this is different the array has changed. Also the names left are compared with the latest array to cover the scenario where an equal number of players could have been added and deleted. Finally if the difference in length of the remaining teams is greater than 1 then clearly deletions have occurred. In these scenarios the function to create teams from the ranking is called. If several deletions but no additions have occured across both teams but the final remaining teams are the same length or different by only one player the shuffle function is used. However given that the deletions will have changed the teams anyway this is considered acceptable.
 
+   ### 8.4 Supported Screens and Browsers
+
+   #### 8.4.1 Supported Screens
+
+The site has been tested and was found to be responsive and work for the following screen sizes using Chrome Developer Tools:
+
+* Galaxy Fold
+
+* Mobile 375px
+
+* Mobile 425px
+
+* Tablet 768px
+
+* Laptop 1024px
+
+* Laptop 1440px
+
+* Screen 2225px
+
+The Am I Responsive website generates the following screen examples:
+
+![shows sample mobile, tablet, laptop and desktop screens with the application responding adequately](documents/amiresponsive.png "am i responsive screenshot showing example sceeen sizes")
+
+   #### 8.4.2 Supported Browsers
+
+The site has been tested and was found to work on the following internet browsers:
+
+* Google Chrome
+
+* Microsoft Edge
+
+* Firefox
+
+
 ## 8. testing
    8.1 code validation
    8.2 test cases (user story based with screenshots)
