@@ -191,9 +191,95 @@ The configuration used in jshint was as follows:
 
 As a visiting user I want to be able to add players to a player list.
 
-This requirement is met by the provision of an input field for the entry of a player name by the user and an Add Player button. The user gets immediate feedback on screen that the name entry has worked by the name appear on screen.
+This requirement is met by the provision of an input field for the entry of a player name by the user and an Add Player button. The user gets immediate feedback on screen that name entry has happened by the fact of the name appearing on screen.
 
+These features have certain requirements tested as follows:
 
+Test Requirement|Met Requirement when tested
+---|:---:
+Input field provided for name entry|Yes
+Cursor in entry field on initial page load|Yes
+Inputted name appears on screen when Add Player! button pressed|Yes
+Keyboard "Enter" key will also add player name|Yes
+Cursor appears again in a blank entry field after name entry|Yes
+Attempting to enter the same name twice will trigger an alert|Yes
+Attempting to enter a blank name will trigger an alert|Yes
+
+<details><summary>Fig. 8.2.1.1 Add Player Section</summary>
+<img src="documents/add-player.png"
+alt="screenshot of add player section"></details>
+
+#### 8.2.2 User Story 2
+
+As a visiting user I want the application to create two teams using all players on the list. As we are playing for fun all players will play each match even if the numbers are uneven. No player is asked to sit out a match.
+
+This requirement is met by the provision of a Create Teams! button which when clicked divides the player list into two teams A and B. Team A and Team B are printed to screen above the Create Teams Button!
+
+These features have certain requirements tested as follows:
+
+Test Requirement|Met Requirement when tested
+---|:---:
+Create Teams button is provided|Yes
+When clicked the create teams button prints Team A and Team B to screen|Yes
+If player numbers are uneven teams are still created using all players|Yes
+Attempting to create teams with 1 or no players returns an alert|Yes
+
+<details><summary>Fig. 8.2.2.1 Create Teams Section</summary>
+<img src="documents/create-teams.png"
+alt="screenshot of create teams section"></details>
+
+#### 8.2.3 User Story 3
+
+As a visiting user I want to be able to add match results and have the application use this information to try to create more evenly balanced teams when I next hit the create teams button.
+
+This requirement is met by the provision of input fields to add team scores and an Add Match Result! button to submit them. Furthermore the individual player points are displayed in the player list and can be seen to update upon submitting a match result. Finally the Create Teams! button when pressed on again creates teams based on the latest ranking except if the ranking remains unchanged as could occur in the event of a draw or if the score difference in a particular game is too low to impact the current rankings. In this case the teams are changed by shuffling the most recent teams and the user is advised of this on screen.
+
+These features have certain requirements tested as follows:
+
+Test Requirement|Met Requirement when tested
+---|:---:
+Add Match Result! button is provided|Yes
+An input field is provided for each team score|Yes
+When scores are entered and the button clicked a confirmation message appears|Yes
+If the button is clicked without a number in either field an alert is displayed|Yes
+When the result is added the player points in the player list are updated|Yes
+When the player points are updated the player list order is updated accordingly|Yes
+When the create teams button is next clicked teams are created based on ranking and a message advising of this is displayed|Yes
+If the ranking order has not changed clicking the create teams button shuffles the teams and a message advising of this is displayed|Yes
+A ranking of players A, B, C, D creates teams A with D and B with C|Yes
+
+<details><summary>Fig. 8.2.3.1 Team Creation based on rank using A with D, B with C split</summary>
+<img src="documents/ranking.png"
+alt="screenshot of create teams section with ranked teams"></details>
+
+<details><summary>Fig. 8.2.3.2 Enter match result fields and button</summary>
+<img src="documents/result.png"
+alt="screenshot of add match result section"></details>
+
+<details><summary>Fig. 8.2.3.3 Player points updated</summary>
+<img src="documents/player-points.png"
+alt="screenshot of player list with points added based on result"></details>
+
+#### 8.2.4 User Story 4
+
+As a visiting user I also need to be able to remove a player from the list if they leave early while the remainder of the group play on.
+
+This requirement is me by the provision of a delete button that when pressed, highlights each player in the player list allowing an individual player to be clicked on and deleted. A cancel button is also provided to allow the user exit the delete function without deleting a player.
+
+These features have certain requirements tested as follows:
+
+Test Requirement|Met Requirement when tested
+---|:---:
+Delete Player! button is provided|Yes
+When Delete Player! button is pressed all of the players on the player list are highlighted for potential deletion|Yes
+A warning message regarding deletion and the cancel option is displayed|Yes
+Clicking on a player deletes them from the player list|Yes
+Deleted players are also removed from the current displayed teams|Yes
+Clicking the cancel button exits the delete function|Yes
+
+<details><summary>Fig. 8.2.4.1 Delete Player</summary>
+<img src="documents/delete-player.png"
+alt="screenshot of delete player section"></details>
 
 ## 8. testing
    8.1 code validation
