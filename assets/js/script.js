@@ -293,25 +293,29 @@ function shuffleTeams() {
  */
 function updatePlayerPoints() {
 
-    let teamAScore = document.getElementById('team-a-score').value;
-    let teamBScore = document.getElementById('team-b-score').value;
+    let teamAScoreBox = document.getElementById('team-a-score').value;
+    let teamBScoreBox = document.getElementById('team-b-score').value;
 
-    if (teamAScore.trim().length === 0 || teamBScore.trim().length === 0) {
+    if (teamAScoreBox.trim().length === 0 || teamBScoreBox.trim().length === 0) {
         window.alert('Please enter team scores!');
         document.getElementById('team-a-score').value = '';
         document.getElementById('team-a-score').focus();
         return;
     }
 
+    let teamAScore = parseInt(document.getElementById('team-a-score').value);
+    let teamBScore = parseInt(document.getElementById('team-b-score').value);
+
     mostRecentOverwritten = recordScreenRank();
 
     let [teamA, teamB] = gatherTeamsAAndB();
 
     let pointsAwarded;
-    if (teamBScore > teamAScore) {
-        pointsAwarded = teamBScore - teamAScore;
-    } else {
+
+    if (teamAScore > teamBScore) {
         pointsAwarded = teamAScore - teamBScore;
+    } else {
+        pointsAwarded = teamBScore - teamAScore;
     }
 
     if (teamAScore > teamBScore) {
