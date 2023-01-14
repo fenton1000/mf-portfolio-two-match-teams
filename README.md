@@ -70,7 +70,7 @@ alt="wireframe of player list and player delete section"></details>
 
 * If, as a base example, there were four players on the list, A, B, C and D in that order, the application would divide them putting A and D together on one team and B and C together on the other. A simple split of every second player, putting A and C together would always favour team A assuming the ranking reasonably reflects the players abilities. This AD BC approach is repeated as the application works down the list and the javscript code has been designed to split and sort the player array twice on every creation event to achieve this.
 
-*If it happens that the ranking has not changed before a particular team creation event the application is designed to shuffle the previous teams in this case as otherwise the application would create the same teams again. It is assumed that a user clicking create teams wants new teams every time.
+* If it happens that the ranking has not changed before a particular team creation event the application is designed to shuffle the previous teams in this case as otherwise the application would create the same teams again. It is assumed that a user clicking create teams wants new teams every time.
 
 <details><summary>Fig. 3.4.1 Create Teams</summary>
 <img src="documents/pp2-wireframe-mobile-create-teams.png"
@@ -126,7 +126,7 @@ In deciding to provide the product initially without any of these features the k
 
 * The background colour is #9dce76. The key consideration is that it does not distract from the site content.
 
-* The background color for the header and footer is #9dce76 and was chosen to provide a degree of contrast from the main body of the page without being radically different. The subtle difference is important particularly for the header which is fixed and would otherwise blend into the background at certain scroll locations.
+* The background color for the header is #9dce76 and was chosen to provide a degree of contrast from the main body of the page without being radically different. The subtle difference is important as the header is fixed and would otherwise blend into the background at certain scroll locations.
 
 * The background color for the link hover position is the same as the main background. This provides adequate contrast with the the pre-hover position.
 
@@ -266,7 +266,7 @@ alt="screenshot of player list with points added based on result"></details>
 
 As a visiting user I also need to be able to remove a player from the list if they leave early while the remainder of the group play on.
 
-This requirement is me by the provision of a delete button that when pressed, highlights each player in the player list allowing an individual player to be clicked on and deleted. A cancel button is also provided to allow the user exit the delete function without deleting a player.
+This requirement is meet by the provision of a delete button that when pressed, highlights each player in the player list allowing an individual player to be clicked on and deleted. A cancel button is also provided to allow the user exit the delete function without deleting a player.
 
 These features have certain requirements tested as follows:
 
@@ -295,7 +295,7 @@ Solution: The solution was to ensure the correct javascript code sequencing with
 
 3. Initially the shuffle function to create alternative teams if the ranking does not change could only toggle back and forth between two teams options if the ranking remained unchanged for a number of matches.
 
-Solution: The initial system relied only on a comparison of the current teams with the team the ranking would provide. If they were the same the team would shuffle. After one toggle however, the latest team would appear different to the ranking team and so the ranking based team would be chosen again. In the event of no change to the ranking it reverts to the second last team set. The current system includes a seperate ranking array to record the last ranking before it is overwritten by any of the add player, delete player or add points functions. This allows comparison of the current ranking and the one just previous before next teams creation and the shuffle team option is always called if the ranking is unchanged. There are further checks required also to address some particular corner cases that were not considered during design and developement and emerged as bugs during testing. These are addressed seperately below.
+Solution: The initial system relied only on a comparison of the current teams with the next teams the ranking would provide. If they were the same, the teams would shuffle by one player. After one toggle however, the latest team would appear different to the ranking based teams (because of the shuffle) and so the ranking based teams would be chosen again. In the event of no change to the ranking it reverts to the second last team set. The current system includes a seperate ranking array to record the last ranking before it is overwritten by any of the add player, delete player or add points functions. This allows comparison of the current ranking and the one just previous before next teams creation and the shuffle team option is always called if the ranking is unchanged. There are further checks required also to address some particular corner cases that were not considered during design and developement and emerged as bugs during testing. These are addressed seperately below.
 
 4. Initially some of the buttons jumped position in an undesireable manner at certain screen widths.
 
@@ -303,11 +303,11 @@ Solution: This was addressed with media queries focusing mainly on element width
 
 5. When a user attempted to create teams with one or no players available in the player list the application delivered poor user interface output. See screenshots:
 
-<details><summary>Fig. 8.3.1 Poor UI with no players but atempted team creation</summary>
+<details><summary>Fig. 8.3.1 Poor UI with no players but attempted team creation</summary>
 <img src="documents/poor-ui-none.png"
 alt="screenshot of poor ui feedback showing two undefined statements"></details>
 
-<details><summary>Fig. 8.3.2 Poor UI with one player but atempted team creation</summary>
+<details><summary>Fig. 8.3.2 Poor UI with one player but attempted team creation</summary>
 <img src="documents/poor-ui-one.png"
 alt="screenshot of poor ui feedback showing one undefined statement"></details>
 
