@@ -20,7 +20,7 @@ Please note that the features section contains relevant extracts from the projec
 
 * The header contains the application name "Match Teams" and a sub-heading, "Picks Teams so You Don't have to!" to provide a strong initial indication as to what the application does.
 
-* The header contains a link to the How it Works section as this may well be off screen on smaller devices from the beginning and may get pushed down off screen as players are added and teams are created. It was not considered ncessary to add links to other sections as they are close to the top or within a short scrolling distance.
+* The header contains a link to the How it Works section as this may well be off screen on smaller devices from the beginning and may get pushed down off screen as players are added and teams are created. It was not considered necessary to add links to other sections as they are close to the top or within a short scrolling distance.
 
 * A home link is also provided.
 
