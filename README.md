@@ -377,25 +377,11 @@ The site was developed in gitpod as follows:
 
 1. From the github repository created for the project (see below) the Gitpod button installed as a chrome browser extension was clicked. A Gitpod workspace was created.
 
-2. Within the workspace explorer the required html file index.html was created.
+2. To view the ongoing development in a seperate browser tab, the command python3-m http.server was entered in the IDE terminal.
 
-3. Within the workspace explorer an assets folder was created.
+3. At regular appropriate intervals the latest version of the code was saved via the git add and git commit commands. Appropriate commit messages were added to control the revisions.
 
-4. Within the assets folder a css folder and a js folder were created.
-
-5. Within the css folder a style.css file was created for the project css.
-
-6. Within the js folder a script.js file was created for the project javascript.
-
-7. Basic template boilerplate html was introduced to index.html and links created to the style.css and script.js files.
-
-8. Coding of the website proceeded using the html, css and javascript coding languages.
-
-9. To view the ongoing development in a seperate browser tab, the command python3-m http.server was entered in the IDE terminal.
-
-10. At regular appropriate intervals the latest version of the code was saved via the git add and git commit commands. Appropriate commit messages were added to control the revisions.
-
-11. The git push command was used to push all committed code and documentation to the repository for secure storing.
+4. The git push command was used to push all committed code and documentation to the repository for secure storing.
 
    ### 9.2 via github pages
 
